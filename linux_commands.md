@@ -5,9 +5,7 @@
 ` $ yum list installed `
 
 # update all
-```
-$ sudo yum update
-```
+`$ sudo yum update`
 
 #update 1 pack
 $ sudo yum update openssl
