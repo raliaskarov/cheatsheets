@@ -3,16 +3,10 @@
 
 |Command                              |Action                               |
 |-------------------------------------|-------------------------------------|
-|show intalled | ` $ yum list installed ` "
-
-# update all
-`$ sudo yum update`
-
-#update 1 pack
-$ sudo yum update openssl
-
-#show installed repos
-yum repolist all
+|` $ yum list installed `| show intalled|
+|`$ sudo yum update`|update all|
+|`$ sudo yum update openssl`|update 1 pack|
+|`yum repolist all`|show installed repos|
 
 #find package
 $ sudo yum search "find"
