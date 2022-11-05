@@ -1,7 +1,7 @@
-|Command                              |Action                               |
-|-------------------------------------|-------------------------------------|
 # Software management
 ## yum/get-apt
+|Command                              |Action                               |
+|-------------------------------------|-------------------------------------|
 |`$ yum list installed `| show intalled|
 |`$ sudo yum update`|update all|
 |`$ sudo yum update openssl`|update 1 pack|
