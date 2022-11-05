@@ -9,8 +9,12 @@
 |`$ sudo yum search "find"`|find package|
 |`$ sudo yum-config-manager --add-repo https://www.example.com/repository.repo` | add repo|
 |`$ sudo yum install <PACKAGE>`|install package|
+
 **Working with pip**
+|Command                              |Action                               |
+|-------------------------------------|-------------------------------------|
 sudo pip3 install -r requirements.txt
+
 **Files managmenet**
 |`$ rmdir <DIRECTORY>`|remove EMPTY directory|
 |`$ rm -r <DIRECTORY>`|remove not empty directory with all contents **without prompting**|
