@@ -1,6 +1,7 @@
 
 **Software management**
 
+|Action           |Command                              |
 |-----------------|-------------------------------------|
 |show intalled | ` $ yum list installed ` "
 
