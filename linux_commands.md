@@ -1,11 +1,13 @@
 
 **Software management**
 
-#show intalled
-$ yum list installed
+# show intalled
+` $ yum list installed `
 
-#update all
+# update all
+```
 $ sudo yum update
+```
 
 #update 1 pack
 $ sudo yum update openssl
