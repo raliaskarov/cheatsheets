@@ -14,11 +14,17 @@
 |-------------------------------------|-------------------------------------|
 |`sudo pip3 install -r requirements.txt`|install pacs from requirements
 # Files managmenet
+|Command                              |Action                               |
+|-------------------------------------|-------------------------------------|
 |`$ rmdir <DIRECTORY>`|remove EMPTY directory|
 |`$ rm -r <DIRECTORY>`|remove not empty directory with all contents **without prompting**|
 |`$ rm -i <FILENAME> | Remove file with prompring y/n|
 |`$ rm \*.pdf| Remove all .pdf files|
 # Navigation
+|Command                              |Action                               |
+|-------------------------------------|-------------------------------------|
 |` $ pwd | Print working directory|
 # Terminal
+|Command                              |Action                               |
+|-------------------------------------|-------------------------------------|
 |` $ tmux kill-session`|close tmux session|
