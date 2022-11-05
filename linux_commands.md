@@ -18,12 +18,12 @@
 |-------------------------------------|-------------------------------------|
 |`$ rmdir <DIRECTORY>`|remove EMPTY directory|
 |`$ rm -r <DIRECTORY>`|remove not empty directory with all contents **without prompting**|
-|`$ rm -i <FILENAME> | Remove file with prompring y/n|
-|`$ rm \*.pdf| Remove all .pdf files|
+|`$ rm -i <FILENAME>` | Remove file with prompring y/n|
+|`$ rm \*.pdf`| Remove all .pdf files|
 # Navigation
 |Command                              |Action                               |
 |-------------------------------------|-------------------------------------|
-|` $ pwd | Print working directory|
+|` $ pwd`| Print working directory|
 # Terminal
 |Command                              |Action                               |
 |-------------------------------------|-------------------------------------|
