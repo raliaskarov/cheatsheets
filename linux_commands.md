@@ -28,3 +28,9 @@
 |Command                              |Action                               |
 |-------------------------------------|-------------------------------------|
 |` $ tmux kill-session`|close tmux session|
+# Archives
+(7za help)[https://www.mankier.com/1/7za]
+|Command                              |Action                               |
+|-------------------------------------|-------------------------------------|
+|` $ 7za e <PATH_TO_ARCHIVE>`|Extract files from archive (without using directory names)|
+
