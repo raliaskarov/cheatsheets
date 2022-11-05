@@ -1,8 +1,8 @@
 
 **Software management**
 
-|Action           |Command                              |
-|-----------------|-------------------------------------|
+|Command                              |Action                               |
+|-------------------------------------|-------------------------------------|
 |show intalled | ` $ yum list installed ` "
 
 # update all
