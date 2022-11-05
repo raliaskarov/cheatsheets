@@ -1,6 +1,6 @@
 
 **Software management**
-
+|-----------------|-------------------------------------|
 |show intalled | ` $ yum list installed ` "
 
 # update all
