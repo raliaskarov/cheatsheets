@@ -10,6 +10,8 @@
 |`$ sudo yum-config-manager --add-repo https://www.example.com/repository.repo` | add repo|
 |`$ sudo yum install <PACKAGE>`|install package|
 ## Working with pip
+|Command                              |Action                               |
+|-------------------------------------|-------------------------------------|
 |`sudo pip3 install -r requirements.txt`|install pacs from requirements
 # Files managmenet
 |`$ rmdir <DIRECTORY>`|remove EMPTY directory|
