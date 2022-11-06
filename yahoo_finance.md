@@ -1,4 +1,4 @@
-**Plot time series for EURUSD for past 1y daily close prices **
+**Plot time series for EURUSD for past 1y daily close prices**
 ```
 import yfinance as yf
 ticker = yf.Ticker("EURUSD=X")
