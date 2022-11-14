@@ -27,6 +27,8 @@
 # Terminal
 |Command                              |Action                               |
 |-------------------------------------|-------------------------------------|
+|`tmux new -s <SessionNameGoesHere>`|start new session|
+|`tmux attach -t <SessionNameGoesHere>`|attch session|
 |` $ tmux kill-session`|close tmux session|
 # Archives
 |Command                              |Action                               |
