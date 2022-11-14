@@ -28,8 +28,9 @@
 |Command                              |Action                               |
 |-------------------------------------|-------------------------------------|
 |`tmux new -s <SessionNameGoesHere>`|start new session|
-|`tmux attach -t <SessionNameGoesHere>`|attch session|
 |`[Ctrl+B], <release>, [D]`|detatch session|
+|`tmux attach`|attch latest session|
+|`tmux attach -t <SessionNameGoesHere>`|attch specific session|
 |` $ tmux kill-session`|close tmux session|
 # Archives
 |Command                              |Action                               |
