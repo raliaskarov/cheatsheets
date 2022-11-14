@@ -29,6 +29,7 @@
 |-------------------------------------|-------------------------------------|
 |`tmux new -s <SessionNameGoesHere>`|start new session|
 |`tmux attach -t <SessionNameGoesHere>`|attch session|
+|`Ctrl+B, <release>, Ctrl+D`|detatch session|
 |` $ tmux kill-session`|close tmux session|
 # Archives
 |Command                              |Action                               |
