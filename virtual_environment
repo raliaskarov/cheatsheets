@@ -1,0 +1,10 @@
+# Commands to initiate, start and deactivate venv on python (Windows)
+
+# Create venv
+cd <PATH>
+python -m virtualenv install env
+.\env\Scripcts\activate
+pip intall -r requirements.txt
+
+# Run app from venv
+cd <PATH> & .\env\Scripts\activate & .\env\Scripts\streamlit run main.py
