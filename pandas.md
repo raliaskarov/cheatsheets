@@ -13,5 +13,6 @@ df
 index = list(df.index)
 index.remove('Total')
 index.insert(0, 'Total')
-df.reindex(index)
+df = df.reindex(index)
+df
 ```
