@@ -10,15 +10,11 @@ Here's an example of how you could create a package for your table_profiling.py 
 
 **Steps**:
 
-Create a new directory for your package and name it something like data_analysis_package.
-
-Create a subdirectory called data_analysis_package/data_analysis.
-
-Move your table_profiling.py file into the data_analysis_package/data_analysis directory.
-
-Create a file called __init__.py in the data_analysis_package/data_analysis directory. This file is necessary to tell Python that this directory should be treated as a package.
-
-Create a setup.py file in the root directory of your data_analysis_package directory. This file is used by Python's packaging tools to build and install your package. Here's an example of what your setup.py file might look like:
+1. Create a new directory for your package and name it something like data_analysis_package.
+2. Create a subdirectory called data_analysis_package/data_analysis.
+3. Move your table_profiling.py file into the data_analysis_package/data_analysis directory.
+4. Create a file called __init__.py in the data_analysis_package/data_analysis directory. This file is necessary to tell Python that this directory should be treated as a package.
+5. Create a setup.py file in the root directory of your data_analysis_package directory. This file is used by Python's packaging tools to build and install your package. Here's an example of what your setup.py file might look like:
 
 ```
 from setuptools import setup
@@ -34,9 +30,8 @@ setup(
     url='https://github.com/yourusername/data_analysis_package'
 )
 ```
-In your other projects, you can then install your package using pip: pip install git+https://github.com/yourusername/data_analysis_package.git.
-
-With this setup, you can easily reuse your profile_dataframe(df) function in multiple projects by simply importing it from your data_analysis package:
+6. In your other projects, you can then install your package using pip: pip install git+https://github.com/yourusername/data_analysis_package.git.
+7. With this setup, you can easily reuse your profile_dataframe(df) function in multiple projects by simply importing it from your data_analysis package:
 ```
 from data_analysis.table_profiling import profile_dataframe
 
