@@ -1,4 +1,5 @@
 **About**
+
 Instruction to enable pulling repository code to other environment using pip install
 
 **Objective**
@@ -34,9 +35,9 @@ setup(
 In your other projects, you can then install your package using pip: pip install git+https://github.com/yourusername/data_analysis_package.git.
 
 With this setup, you can easily reuse your profile_dataframe(df) function in multiple projects by simply importing it from your data_analysis package:
-`
+```
 from data_analysis.table_profiling import profile_dataframe
 
 # Use the function in your code
 profile_dataframe(df)
-`
+```
