@@ -1,5 +1,5 @@
-**About** 
-Instruction to enable pulling repository code to other environment using pip install
+**About**
+> Instruction to enable pulling repository code to other environment using pip install
 
 **Objective**
 Assume you have table_profiling.py in repo data_analysis_package on git hub.
