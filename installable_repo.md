@@ -1,12 +1,15 @@
 **About**
-> Instruction to enable pulling repository code to other environment using pip install
+
+Instruction to enable pulling repository code to other environment using pip install
 
 **Objective**
+
 Assume you have table_profiling.py in repo data_analysis_package on git hub.
 You want to access it from laptop using pip install.
 Here's an example of how you could create a package for your table_profiling.py file
 
 **Steps**:
+
 Create a new directory for your package and name it something like data_analysis_package.
 
 Create a subdirectory called data_analysis_package/data_analysis.
