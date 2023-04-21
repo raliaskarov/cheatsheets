@@ -20,6 +20,7 @@ FileLink(filename)
 ## For versatile solution use:
 When importing packages:
 ```
+import os
 if 'COLAB_GPU' in os.environ:
     from google.colab import files
 else:
