@@ -11,7 +11,7 @@
 │   │       └── home.html
 ```
 
-.gitignore
+# .gitignore
 ```
 # .gitignore
 __pycache__
