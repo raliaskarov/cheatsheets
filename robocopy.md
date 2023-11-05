@@ -5,7 +5,7 @@ SET source="D:\source_directory"
 SET destination="E:\destination_directory"
 SET log_file="E:\backup_log.txt"
 
-robocopy "D:" "E" /MIR /Z /TEE /ETA /LOG:"E:\backup_log.txt"
+robocopy "D:" "E" /MIR /XO /Z /TEE /ETA /LOG:"E:\backup_log.txt"
 
 ```
 Options:
@@ -22,7 +22,7 @@ Options:
 - /MT - Enables multi-threaded copying with N threads (default is 8).
 - /XC - Excludes changed files.
 - /XN - Excludes newer files.
-- /XO - Excludes older files.
+- /XO - Excludes older files. Will copy files which were updated.
 - /L - Displays files that would be copied or deleted without actually performing the operation.
 - /NP - Specifies that the progress of the copying operation will not be displayed.
 - /IPG - Specifies the inter-packet gap to free bandwidth on slow lines.
