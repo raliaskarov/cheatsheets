@@ -5,6 +5,7 @@ Show accounts
 ```
 gcloud auth list
 gcloud auth login
+gcloud config set account `ACCOUNT`
 ```
 
 ## In Google Cloud CLI install and update packages
