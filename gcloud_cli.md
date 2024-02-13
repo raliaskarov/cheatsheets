@@ -28,4 +28,9 @@ Create app
 ```
 gcloud app create
 ```
+## Deploy
+```
+gcloud app deploy
+gcloud app deploy --verbosity=debug
+```
 
