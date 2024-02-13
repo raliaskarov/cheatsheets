@@ -8,6 +8,13 @@ gcloud auth login
 gcloud config set account `ACCOUNT`
 ```
 
+## Manage projects
+```
+gcloud projects list
+gcloud config set project PROJECT_ID
+
+```
+
 ## In Google Cloud CLI install and update packages
 ```
 python -m pip install --upgrade pip
