@@ -41,3 +41,7 @@ gcloud app deploy
 gcloud app deploy --verbosity=debug
 ```
 
+## Debug
+```
+gcloud app logs tail -s default
+```
