@@ -54,10 +54,11 @@ gcloud builds submit --config cloudbuild.yaml
 ```
 
 ## Deploy
+Open to internet
 ```
-# open to internet
 gcloud run deploy your-service-name --image gcr.io/your-project-id/your-image-name --platform managed --region your-region --allow-unauthenticated
-# restricted
+Restricted, requires authentication
+```
 gcloud run deploy your-service-name --image gcr.io/your-project-id/your-image-name --platform managed --region your-region --no-allow-unauthenticated
 
 ```
