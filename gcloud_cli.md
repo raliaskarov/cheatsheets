@@ -57,10 +57,10 @@ gcloud builds submit --config cloudbuild.yaml
 Open to internet
 ```
 gcloud run deploy your-service-name --image gcr.io/your-project-id/your-image-name --platform managed --region your-region --allow-unauthenticated
+```
 Restricted, requires authentication
 ```
 gcloud run deploy your-service-name --image gcr.io/your-project-id/your-image-name --platform managed --region your-region --no-allow-unauthenticated
-
 ```
 Replace your-service-name, your-project-id, your-image-name, and your-region with your specific details. The --allow-unauthenticated flag makes your app publicly accessible. If your application requires authentication, you might want to omit this flag and configure the appropriate access controls.
 
