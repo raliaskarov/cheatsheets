@@ -35,6 +35,10 @@ Create app
 ```
 gcloud app create
 ```
+## Build
+```
+gcloud builds submit --config cloudbuild.yaml                                      
+```
 ## Deploy
 ```
 gcloud app deploy
@@ -68,9 +72,4 @@ Replace your-service-name, your-project-id, your-image-name, and your-region wit
 View token
 ```
 gcloud auth print-identity-token
-```
-Test auth
-```
-ID_TOKEN=$(gcloud auth print-identity-token)
-curl -H "Authorization: Bearer ${ID_TOKEN}" https://emea-controlling-prd-wbp3665ika-ew.a.run.app/
 ```
