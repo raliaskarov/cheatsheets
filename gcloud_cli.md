@@ -35,17 +35,14 @@ Create app
 ```
 gcloud app create
 ```
-## Build
-```
-gcloud builds submit --config cloudbuild.yaml                                      
-```
+
 ## Deploy
 ```
 gcloud app deploy
 gcloud app deploy --verbosity=debug
 ```
 
-## Debug
+## View logs
 ```
 gcloud app logs tail -s default
 ```
