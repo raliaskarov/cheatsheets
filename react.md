@@ -1,6 +1,6 @@
 Notes from my studies on react.
 
-# What is lifecycle of a component?
+## What is lifecycle of a component?
 1. Mounting
 
 In React, the function that is invoked right after a component is mounted on the DOM is componentDidMount for class components. This lifecycle method is used for class components to run code immediately after the component is inserted into the DOM, such as making API calls, adding event listeners, or doing any DOM manipulation.
@@ -49,7 +49,7 @@ export default MyFunctionalComponent;
 
 
 
-# How to send data from Child to Parent?
+## How to send data from Child to Parent?
 To pass data from child components to parent components, you typically use a combination of callbacks and state. Here's a general approach:
 - Define a Callback Function in the Parent Component: This function is responsible for updating the state in the parent component based on the data received from the child component.
 - Pass the Callback Function as a Prop to the Child Component: The child component receives this function as a prop.
@@ -95,5 +95,36 @@ function ChildComponent({ sendDataToParent }) {
 }
 
 export default ChildComponent;
+
+```
+
+## How to post data to server?
+- Collect Data: It collects the data that needs to be sent to the server. This data could be user input from a form, information generated during the application's runtime, or any data that the application needs to persist beyond the current session.
+- Initiate an HTTP Request: It uses an HTTP client (such as the Fetch API, Axios, or XMLHttpRequest in JavaScript) to send an HTTP request to the server. This request is typically a POST request when creating new resources or sending data for processing.
+- Serialize Data: Before sending the data, it serializes the data into a format that the server can understand. JSON (JavaScript Object Notation) is a commonly used format for such data exchange.
+- Handle the Response: After sending the data, it waits for a response from the server. The response could indicate success (e.g., HTTP status code 200 OK or 201 Created) or failure (e.g., 400 Bad Request, 500 Internal Server Error).
+- Error Handling: It includes error handling mechanisms to deal with network issues, server errors, or any other problems that might occur during the data transmission.
+
+```
+async function postDataToServer(url = '', data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+  return response.json(); // parses JSON response into native JavaScript objects
+}
+
+// Example usage:
+postDataToServer('https://example.com/data', { key: 'value' })
+  .then(data => {
+    console.log(data); // JSON data parsed by `response.json()` call
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 
 ```
