@@ -1,7 +1,55 @@
 Notes from my studies on react.
 
+# What is lifecycle of a component?
+1. Mounting
 
-# Sendign data from Child to Parent
+In React, the function that is invoked right after a component is mounted on the DOM is componentDidMount for class components. This lifecycle method is used for class components to run code immediately after the component is inserted into the DOM, such as making API calls, adding event listeners, or doing any DOM manipulation.
+
+Here's a simple example of how componentDidMount is used in a class component:
+```
+import React, { Component } from 'react';
+
+class MyComponent extends Component {
+  componentDidMount() {
+    console.log('Component has been mounted on the DOM');
+    // You can perform side-effects here, like fetching data or setting up subscriptions.
+  }
+
+  render() {
+    return (
+      <div>
+        Hello, World!
+      </div>
+    );
+  }
+}
+
+export default MyComponent;
+```
+For functional components, the useEffect hook with an empty dependency array [] serves a similar purpose as componentDidMount. It runs after the first render and is used for similar side effects as componentDidMount in class components. Here's how you might use it:
+```
+import React, { useEffect } from 'react';
+
+function MyFunctionalComponent() {
+  useEffect(() => {
+    console.log('Component has been mounted on the DOM');
+    // Perform side-effects here
+  }, []); // The empty array means this effect runs once after the initial render
+
+  return (
+    <div>
+      Hello, World!
+    </div>
+  );
+}
+
+export default MyFunctionalComponent;
+
+```
+
+
+
+# How to send data from Child to Parent?
 To pass data from child components to parent components, you typically use a combination of callbacks and state. Here's a general approach:
 - Define a Callback Function in the Parent Component: This function is responsible for updating the state in the parent component based on the data received from the child component.
 - Pass the Callback Function as a Prop to the Child Component: The child component receives this function as a prop.
