@@ -42,6 +42,12 @@ gcloud app deploy
 gcloud app deploy --verbosity=debug
 ```
 
+## Deploy as a version
+```
+gcloud app deploy --version=staging-version --no-promote
+```
+--no-promote will ensure no trafic sent from main link to this new version
+
 ## View logs
 ```
 gcloud app logs tail -s default
