@@ -9,6 +9,13 @@
 |`$ sudo yum search "find"`|find package|
 |`$ sudo yum-config-manager --add-repo https://www.example.com/repository.repo` | add repo|
 |`$ sudo yum install <PACKAGE>`|install package|
+
+Install deb package
+```
+wget https://download.nomachine.com/download/7.10/Raspberry/nomachine_7.10.1_1_armhf.deb
+sudo dpkg -i nomachine_7.10.1_1_armhf.deb
+sudo apt --fix-broken install
+```
 ## Working with pip
 |Command                              |Action                               |
 |-------------------------------------|-------------------------------------|
