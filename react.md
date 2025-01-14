@@ -3,7 +3,7 @@
 ## Start app
 install dependencies
 ```
-npm install
+npm install --verbose
 ```
 ** run script from package.json
 ```
