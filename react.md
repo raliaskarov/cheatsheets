@@ -10,6 +10,10 @@ npm install --verbose
 npm run preview
 ```
 
+# Resources
+React boilerplate
+https://github.com/boilertown/react-ui-boilerplate
+
 # Code
 ## Default components
 footer
