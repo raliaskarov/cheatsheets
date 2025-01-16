@@ -27,3 +27,21 @@ Link to new github repo
 ```
 git remote add origin https://github.com/<your-username>/<new-repository-name>.git
 ```
+
+Update changes
+check for changes
+```
+git status
+```
+stage
+```
+git add .
+```
+commit
+```
+git commit -m "Your descriptive message about the updates"
+```
+push
+```
+git push
+```
