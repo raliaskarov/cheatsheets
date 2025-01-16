@@ -44,4 +44,6 @@ git commit -m "Your descriptive message about the updates"
 push
 ```
 git push
+# or
+git push origin main
 ```
