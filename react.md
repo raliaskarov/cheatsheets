@@ -304,3 +304,54 @@ function ToggleMessage() {
 |slice()	|Yes	|No	|Creating copies or subarrays|
 |splice()	|No (returns removed elements)	|Yes	|In-place insert, remove, or replace elements|
 
+**array.filter()**
+```
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+
+console.log(evenNumbers); // [2, 4]
+console.log(numbers);     // [1, 2, 3, 4, 5] (unchanged)
+```
+**array.map()**
+```
+const numbers = [1, 2, 3];
+const doubled = numbers.map(num => num * 2);
+
+console.log(doubled); // [2, 4, 6]
+console.log(numbers); // [1, 2, 3] (unchanged)
+```
+**array.slice()**
+```
+const fruits = ['apple', 'banana', 'cherry', 'date'];
+const slicedFruits = fruits.slice(1, 3);
+
+console.log(slicedFruits); // ['banana', 'cherry'] (indexes 1, 2)
+console.log(fruits);       // ['apple', 'banana', 'cherry', 'date'] (unchanged)
+```
+**array.splice()**
+*remove
+```
+const fruits = ['apple', 'banana', 'cherry', 'date'];
+const removed = fruits.splice(1, 2); 
+// Removes 2 elements starting at index 1
+
+console.log(removed);  // ['banana', 'cherry']
+console.log(fruits);   // ['apple', 'date'] (mutated!)
+```
+*insert
+```
+const colors = ['red', 'blue'];
+colors.splice(1, 0, 'green', 'yellow'); 
+// Insert 'green', 'yellow' at index 1, removing 0 elements
+
+console.log(colors); 
+// ['red', 'green', 'yellow', 'blue'] (mutated)
+```
+*replace
+```
+const animals = ['cat', 'dog', 'bird'];
+animals.splice(1, 1, 'fish');
+// At index 1, remove 1 element ('dog'), and insert 'fish'
+
+console.log(animals); // ['cat', 'fish', 'bird']
+```
