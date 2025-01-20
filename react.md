@@ -297,10 +297,10 @@ function ToggleMessage() {
 
 ## Arrays
 
-Method	|Returns New Array?	|Mutates Original Array?	|Common Use Case
+|Method	|Returns New Array?	|Mutates Original Array?	|Common Use Case|
 ---------
-|filter()	|Yes	|No	|Filtering out unwanted elements
-|map()	| Yes	|No	|Transforming each element in some manner
-|slice()	|Yes	|No	|Creating copies or subarrays
-|splice()	|No (returns removed elements)	|Yes	|In-place insert, remove, or replace elements
+|filter()	|Yes	|No	|Filtering out unwanted elements|
+|map()	| Yes	|No	|Transforming each element in some manner|
+|slice()	|Yes	|No	|Creating copies or subarrays|
+|splice()	|No (returns removed elements)	|Yes	|In-place insert, remove, or replace elements|
 
