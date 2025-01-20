@@ -329,7 +329,8 @@ console.log(slicedFruits); // ['banana', 'cherry'] (indexes 1, 2)
 console.log(fruits);       // ['apple', 'banana', 'cherry', 'date'] (unchanged)
 ```
 **array.splice()**
-*remove
+
+* remove
 ```
 const fruits = ['apple', 'banana', 'cherry', 'date'];
 const removed = fruits.splice(1, 2); 
@@ -338,7 +339,7 @@ const removed = fruits.splice(1, 2);
 console.log(removed);  // ['banana', 'cherry']
 console.log(fruits);   // ['apple', 'date'] (mutated!)
 ```
-*insert
+* insert
 ```
 const colors = ['red', 'blue'];
 colors.splice(1, 0, 'green', 'yellow'); 
@@ -347,7 +348,7 @@ colors.splice(1, 0, 'green', 'yellow');
 console.log(colors); 
 // ['red', 'green', 'yellow', 'blue'] (mutated)
 ```
-*replace
+* replace
 ```
 const animals = ['cat', 'dog', 'bird'];
 animals.splice(1, 1, 'fish');
