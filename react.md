@@ -158,21 +158,22 @@ for (let i = 0; i < 10; i++) {
   numbers.push(i);
 }
 ```
-#### Array map() method
+### Array map() method
 The map() method is commonly used to iterate over each element of an array and return a new array of React elements
 ```
 const items = ['Apple', 'Banana', 'Orange'];
 const itemList = items.map((item, index) => <li key={index}>{item}</li>);
 return <ul>{itemList}</ul>;
 ```
-for...of Loop: use to  iterate over the elements of an array:
+### for...of Loop
+Use to  iterate over the elements of an array:
 ```
 const items = ['Apple', 'Banana', 'Orange'];
 for (const item of items) {
   console.log(item);
 }
 ```
-Rendering a List of Items
+### Rendering a List of Items
 You can render a list of items by mapping over an array and returning a JSX element for each item
 ```
 import React from 'react';
@@ -191,7 +192,7 @@ function ArrayComponent() {
 }
 export default ArrayComponent;
 ```
-Adding and removing items in array
+### Adding and removing items in array
 ```
 import React, { useState } from 'react';
 function MyComponent() {
@@ -267,7 +268,7 @@ function MyComponent() {
 }
 export default MyComponent;
 ```
-#### Style using object
+### Style using object
 Style can be applied as an object like inline style
 ```
 import React, { useState } from 'react';
