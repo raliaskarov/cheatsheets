@@ -9,6 +9,10 @@ npm install --verbose
 ```
 npm run preview
 ```
+disable ssl checks
+```
+npm config set strict-ssl false
+```
 
 # Resources
 React boilerplate
