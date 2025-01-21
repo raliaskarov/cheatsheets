@@ -71,14 +71,16 @@ Function component starts with variable type along with name of the component an
 ```
 import React from 'react'
 
-const Extra = () => {
+const Extra = () => { // 'Extra' is name of function can be any
   return (
-    <div>Extra</div>
+    <>
+    Any HTML  here
+    </>
   )
 }
-
-export default Extra
+export default Extra // 'Extra' must match name of function
 ```
+
 ### Props in function component
 Props can be sent from parent component as attribute along with child component
 ```
