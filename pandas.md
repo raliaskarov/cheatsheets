@@ -22,13 +22,13 @@ df
 ```
 # Define replacements with lowercase keys
 replacements = {
-    'total volume sold - aggregates': 'aggregates volume sold',
-    'total volume sold - rmx': 'ready-mix concrete volume sold',
-    'recurring ebit *': 'recurring ebit'
+    'ABCD': 'ABC',
+    ',': '.',
+    'replace met: 'with text'
 }
 
 # Apply replacements
-df['MTD Actuals'] = df['MTD Actuals'].replace(replacements)
+df['column_name'].replace(replacements)
 
 
 ```
