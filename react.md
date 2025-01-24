@@ -359,6 +359,14 @@ animals.splice(1, 1, 'fish');
 console.log(animals); // ['cat', 'fish', 'bird']
 ```
 
+# Redux
+Calculate sum of items
+```
+const sumCartItems = (items) =>
+  items.reduce((total, item) => total + item.price * item.quantity, 0);
+
+const totalAmount = sumCartItems(cartItems);
+```
 # Other
 **Ternary operator**
 Conditional rendering 
