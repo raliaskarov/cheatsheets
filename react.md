@@ -358,3 +358,11 @@ animals.splice(1, 1, 'fish');
 
 console.log(animals); // ['cat', 'fish', 'bird']
 ```
+
+# Other
+**Ternary operator**
+Conditional rendering 
+Use e.g. when shopping cart total amount appears only if there is anything added to shopping cart 
+```
+<div>{totalAmount ? <div>'The total amount is {totalAmount}</div> : ''}</div>
+```
