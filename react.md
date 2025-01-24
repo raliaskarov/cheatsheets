@@ -360,12 +360,30 @@ console.log(animals); // ['cat', 'fish', 'bird']
 ```
 
 # Redux
-Calculate sum of items
+### Calculate sum of items
 ```
 const sumCartItems = (items) =>
   items.reduce((total, item) => total + item.price * item.quantity, 0);
 
 const totalAmount = sumCartItems(cartItems);
+```
+alternative using forEarch loop
+```
+let totalAmount = 0;
+
+cartItems.forEach(item => {
+  totalAmount += item.price * item.quantity;
+});
+
+```
+alternative using for...of loop
+```
+let totalAmount = 0;
+
+for (const item of cartItems) {
+  totalAmount += item.price * item.quantity;
+}
+
 ```
 # Other
 **Ternary operator**
