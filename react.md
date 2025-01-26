@@ -1,5 +1,11 @@
 # React Commands
 
+## Create app 
+### using vite
+```
+npm create vite@latest
+```
+
 ## Start app
 install dependencies
 ```
