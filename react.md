@@ -11,10 +11,11 @@ edit package.json as follows:
 // ...
   "scripts": {
     // <other lines here>
-    "preview": "vite build; vite preview --host" // edit this line
+    "preview": "vite build && vite preview --host" // edit this line
   },
 // ...
 ```
+**note:** use && not ; in Windows OS:  "vite build **&&** vite preview --host" 
 ## Start app
 install dependencies
 ```
