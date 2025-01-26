@@ -5,7 +5,16 @@
 ```
 npm create vite@latest
 ```
-
+set project name, select react and javascript
+edit package.json as follows:
+```
+// ...
+  "scripts": {
+    // <other lines here>
+    "preview": "vite build; vite preview --host" // edit this line
+  },
+// ...
+```
 ## Start app
 install dependencies
 ```
