@@ -41,6 +41,10 @@ commit
 ```
 git commit -m "Your descriptive message about the updates"
 ```
+set branch
+```
+git branch -M main
+```
 push
 ```
 git push
@@ -50,4 +54,8 @@ git push origin main
 force to accept self signed certificate
 ```
 git -c http.sslVerify=false clone https://example.com/path/to/git
+```
+add "/home/project" to safe folder
+```
+git config --global --add safe.directory /home/project
 ```
