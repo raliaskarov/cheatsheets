@@ -538,7 +538,45 @@ for (const item of cartItems) {
 }
 
 ```
+**Example: create slice:**
+```
+// avSlice.js
+import { createSlice } from "@reduxjs/toolkit";
 
+export const avSlice = createSlice({
+  name: "av",
+  initialState: [
+    
+  ],
+
+
+  reducers: {
+    incrementAvQuantity: (state, action) => {
+      
+    },
+    decrementAvQuantity: (state, action) => {
+     
+    },
+  },
+});
+
+export const { incrementAvQuantity, decrementAvQuantity } = avSlice.actions;
+
+export default avSlice.reducer;
+```
+**Example: Create store**
+```
+// store.js
+import { configureStore } from '@reduxjs/toolkit';
+import venueReducer from './venueSlice';
+
+export default configureStore({
+  reducer: {
+    venue: venueReducer,
+  },
+});
+
+```
 
 # Other
 **Ternary operator**
