@@ -586,6 +586,25 @@ Use e.g. when shopping cart total amount appears only if there is anything added
 <div>{totalAmount ? <div>'The total amount is {totalAmount}</div> : ''}</div>
 ```
 **Toggle Shopping list**
+Set conditional css
+```
+.product-list-container {
+  position: absolute;
+  overflow-x: hidden;
+  top: 100vh; /* Initially positioned off-screen (below the viewport) */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: top 0.5s ease; /* Smooth transition when top changes */
+  overflow-y: auto;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+}
+.product-list-container.visible {
+  top: 0;
+}
+```
 Set varbiales to know if showProductList is toggled
 ```
 const [showProductList, setShowProductList] = useState(false);
