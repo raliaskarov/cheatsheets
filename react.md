@@ -585,3 +585,21 @@ Use e.g. when shopping cart total amount appears only if there is anything added
 ```
 <div>{totalAmount ? <div>'The total amount is {totalAmount}</div> : ''}</div>
 ```
+**Toggle Shopping list**
+Set varbiales to know if showProductList is toggled
+```
+const [showProductList, setShowProductList] = useState(false);
+const handleGetStartedClick = () => {
+  setShowProductList(true);
+};
+```
+Set button to toggle showProductList
+```
+<button className="get-started-button" onClick={handleGetStartedClick}>
+```
+Show ProductList component only after "product list is clicked"
+```
+<div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
+  <ProductList />
+</div>
+```
