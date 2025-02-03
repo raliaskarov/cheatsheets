@@ -580,7 +580,22 @@ export default configureStore({
 
 # Other
 **Ternary operator**
-Conditional rendering 
+Conditional rendering S
+Syntax:
+```
+condition ? expressionIfTrue : expressionIfFalse
+```
+Basic example: show product list of showCart is false
+```
+{!showCart ? (
+  <div className="product-grid">
+    {/* Products would typically be rendered here */}
+  </div>
+) : (
+  <CartItem onContinueShopping={handleContinueShopping} />
+)}
+
+```
 Use e.g. when shopping cart total amount appears only if there is anything added to shopping cart 
 ```
 <div>{totalAmount ? <div>'The total amount is {totalAmount}</div> : ''}</div>
