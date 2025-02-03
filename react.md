@@ -579,9 +579,9 @@ export default configureStore({
 ```
 
 # Other
-**Ternary operator**
-Conditional rendering S
-Syntax:
+## Ternary operator
+
+Conditional rendering. Syntax:
 ```
 condition ? expressionIfTrue : expressionIfFalse
 ```
