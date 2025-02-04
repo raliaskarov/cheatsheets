@@ -570,14 +570,13 @@ export default CartSlice.reducer;
 ```
 // store.js
 import { configureStore } from '@reduxjs/toolkit';
-import venueReducer from './venueSlice';
-
-export default configureStore({
-  reducer: {
-    venue: venueReducer,
-  },
+import cartReducer from './CartSlice';
+ const store = configureStore({
+    reducer: {
+        cart: cartReducer,
+    },
 });
-
+export default store
 ```
 
 # Other
