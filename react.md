@@ -538,31 +538,33 @@ for (const item of cartItems) {
 }
 
 ```
-**Example: create slice:**
+**Example: cart slice:**
 ```
-// avSlice.js
-import { createSlice } from "@reduxjs/toolkit";
+// src/CartSlice.jsx
+import { createSlice } from '@reduxjs/toolkit';
 
-export const avSlice = createSlice({
-  name: "av",
-  initialState: [
-    
-  ],
-
-
+export const CartSlice = createSlice({
+  name: 'cart',
+  initialState: {
+    items: [], // Initialize items as an empty array
+  },
   reducers: {
-    incrementAvQuantity: (state, action) => {
-      
+    addItem: (state, action) => {
+    
     },
-    decrementAvQuantity: (state, action) => {
-     
+    removeItem: (state, action) => {
+    },
+    updateQuantity: (state, action) => {
+
+    
     },
   },
 });
 
-export const { incrementAvQuantity, decrementAvQuantity } = avSlice.actions;
+export const { addItem, removeItem, updateQuantity } = CartSlice.actions;
 
-export default avSlice.reducer;
+export default CartSlice.reducer;
+
 ```
 **Example: Create store**
 ```
