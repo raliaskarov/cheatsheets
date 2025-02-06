@@ -640,14 +640,13 @@ Show ProductList component only after "product list is clicked"
 ```
 ## if elif else operator
 ```
-function MyComponent() {
-  let content;
-  if (condition) {
-    content = <ComponentA />;
-  } else {
-    content = <ComponentB />;
-  }
-
-  return <div>{content}</div>;
+if (condition1) {
+  // code to run if condition1 is true
+} else if (condition2) {
+  // code to run if condition2 is true
+} else if (condition3) {
+  // code to run if condition3 is true
+} else {
+  // code to run if none of the above conditions are true
 }
 ```
