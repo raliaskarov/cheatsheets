@@ -579,7 +579,7 @@ import cartReducer from './CartSlice';
 export default store
 ```
 
-# Other
+# Conditional operations
 ## Ternary operator
 
 Conditional rendering. Syntax:
@@ -637,4 +637,17 @@ Show ProductList component only after "product list is clicked"
 <div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
   <ProductList />
 </div>
+```
+## if elif else operator
+```
+function MyComponent() {
+  let content;
+  if (condition) {
+    content = <ComponentA />;
+  } else {
+    content = <ComponentB />;
+  }
+
+  return <div>{content}</div>;
+}
 ```
