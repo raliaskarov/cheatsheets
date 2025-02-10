@@ -1,6 +1,6 @@
 # Deploy to github pages
 
-## React
+## Deploy React app to github
 Install
 ```
 npm install gh-pages --save-dev
@@ -18,4 +18,11 @@ deploy
 ```
 npm run deploy
 ```
-In github repo visit settings, then pages
+In github repo visit settings, then pages, then select to deploy from branch 'gh-pages'.
+Wait 3 min.
+
+
+Note: to deploy with self signed ssl certificate:
+```
+set GIT_SSL_NO_VERIFY=true 
+```
