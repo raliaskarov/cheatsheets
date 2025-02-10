@@ -12,15 +12,7 @@ Add before "build": "vite build" in package.json:
 ```
 in the vite.config.js file add this line before plugins: [react()]
 ```
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-// https://vite.dev/config/
-export default defineConfig({
   base: "react_tutorial_learning_react", // add this line
-  plugins: [react()],
-})
-
 ```
 deploy
 ```
