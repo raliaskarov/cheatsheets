@@ -1,5 +1,18 @@
 # React Commands
 
+## Versions & Management
+check version
+```
+npm --version
+```
+```
+node --version
+```
+update npm
+```
+npm install npm@latest
+```
+
 ## Create app 
 ### using vite
 ```
