@@ -718,7 +718,7 @@ if __name__ == "__main__":
 ```
 frontend - drop data on the screen
 ```
-// src/Components/CapexReport.jsx
+// src/Components/report.jsx
 
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -802,4 +802,18 @@ const CapexReport = () => {
 
 export default CapexReport;
 
+```
+
+if sorting on fronend
+```
+  // fronend/src/components/report.jsx
+  // Handle sorting logic
+    const handleSort = (column) => {
+        let newOrder = "asc";
+        if (sortColumn === column && sortOrder === "asc") {
+            newOrder = "desc";
+        }
+        setSortColumn(column);
+        setSortOrder(newOrder);
+    };
 ```
