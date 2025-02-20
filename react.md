@@ -816,4 +816,19 @@ if sorting on fronend
         setSortColumn(column);
         setSortOrder(newOrder);
     };
+   // ✅ Sort data before rendering
+    const sortedData = [...data].sort((a, b) => {
+        if (!sortColumn) return 0; // No sorting initially
+
+        let valA = a[sortColumn];
+        let valB = b[sortColumn];
+
+        // Convert to lowercase if sorting by project_name (string)
+        if (typeof valA === "string") valA = valA.toLowerCase();
+        if (typeof valB === "string") valB = valB.toLowerCase();
+
+        if (valA < valB) return sortOrder === "asc" ? -1 : 1;
+        if (valA > valB) return sortOrder === "asc" ? 1 : -1;
+        return 0;
+    });
 ```
