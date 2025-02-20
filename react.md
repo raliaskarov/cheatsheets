@@ -663,3 +663,143 @@ if (condition1) {
   // code to run if none of the above conditions are true
 }
 ```
+
+# Flask Backend + React Frontend
+backend - filter and sort data
+```
+# /backend/app.py
+
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)  # Enable CORS so frontend can fetch data
+
+# ✅ Hardcoded sample data
+sample_data = [
+    {"project_name": "Project A", "budget": 50000, "year": "2025"},
+    {"project_name": "Project B", "budget": 75000, "year": "2024"},
+    {"project_name": "Project C", "budget": 30000, "year": "2023"},
+    {"project_name": "Project D", "budget": 44000, "year": "2033"},
+    {"project_name": "Infrastructure improvement", "budget": 20000, "year": "2027"},
+    {"project_name": "Shipyard greenfield", "budget": 100000, "year": "2029"},
+]
+
+@app.route('/data', methods=['GET'])
+def get_data():
+
+    project_name = request.args.get("project_name")
+    budget = request.args.get("budget")
+    year = request.args.get("year")
+
+    filtered_data = sample_data[:] #create a copy of data
+
+    if project_name:
+        filtered_data = [item for item in filtered_data if project_name.lower() in item["project_name"].lower()]
+
+    if budget:
+        try:
+            budget = float(budget)
+            filtered_data = [item for item in filtered_data if item["budget"] == budget]
+        except ValueError:
+            pass  # Ignore invalid numbers
+
+    if year:
+        filtered_data = [item for item in filtered_data if item["year"] == year]
+    return jsonify(filtered_data)  
+
+@app.route('/')
+def home():
+    return "Flask Backend is Running!"  # ✅ Simple message for testing
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+```
+frontend - drop data on the screen
+```
+// src/Components/CapexReport.jsx
+
+import { useState, useEffect } from "react";
+import axios from "axios";
+import Filters from "./Filters";
+
+const API_URL = "http://127.0.0.1:5000"; 
+
+const CapexReport = () => {
+    const [data, setData] = useState([]);
+    const [filters, setFilters] = useState({
+      project_name: "",
+      budget: "",
+      year: "",
+    });
+
+    // fetch data every time filter changes
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const query = new URLSearchParams(filters).toString();
+            const response = await axios.get(`${API_URL}/data?${query}`);
+            setData(response.data);
+        } catch (error) {
+            console.error("Error fetching data", error);
+        }
+      };
+
+      fetchData(); // ensure latest filters 
+    }, [filters]); // trigget every time filter changes
+
+    // Handle sorting logic
+    const handleSort = (column) => {
+        let newOrder = "asc";
+        if (sortColumn === column && sortOrder === "asc") {
+            newOrder = "desc";
+        }
+        setSortColumn(column);
+        setSortOrder(newOrder);
+    }
+
+    const sortedData = [...data].sort((a,b) => {
+        
+    })
+
+    // Update filters and fetch new data
+    const handleFilterChange = (field, value) => {
+      setFilters((prevFilters) => ({
+         ...prevFilters,
+          [field]: value
+      }));
+    };
+
+    return (
+        <div style={{ padding: "20px" }}>
+            <h1>Project Budget Data</h1>
+            
+            {/* Use Filters Compodnent */}
+            <Filters handleFilterChange={handleFilterChange} />
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Budget</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((row, idx) => (
+                        <tr key={idx}>
+                            <td>{row.project_name}</td>
+                            <td>{row.budget}</td>
+                            <td>{row.year}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
+};
+
+export default CapexReport;
+
+```
