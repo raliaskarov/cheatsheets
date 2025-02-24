@@ -35,3 +35,14 @@ with open("Example.txt","w") as writefile:
 
     writefile.write("This is line B\n")
 ```
+
+**Copy data from Example.txt to Example1.txt**
+```
+with open('Example.txt','r') as readfile: 
+
+    with open('Example1.txt','w') as writefile: 
+
+        for line in readfile: 
+
+            writefile.write(line) 
+```
