@@ -22,5 +22,16 @@ print(FileContent)
 ```
 Output:
 This is line 1
+
 This is line 2
+
 This is line 3
+
+**Append text to file**
+```
+with open("Example.txt","w") as writefile: 
+
+    writefile.write("This is line A\n") 
+
+    writefile.write("This is line B\n")
+```
