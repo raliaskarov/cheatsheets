@@ -1,12 +1,21 @@
 # Web Scraping Tools
 
-## HTML extraction: BeautifulSoup
+## HTML extraction option 1: BeautifulSoup
 ```
 from bs4 import BeautifulSoup
 import requests
 URL = "http://www.example.com"
 page = requests.get(URL)
 soup = BeautifulSoup(page.content, "html.parser")
+```
+
+## HTMP extraction option 2: Pandas
+```
+import pandas as pd
+URL = 'https://en.wikipedia.org/wiki/List_of_largest_banks'
+tables = pd.read_html(URL)
+df = tables[0]
+print(df)
 ```
 
 ## Web Crawling: Scrapy
