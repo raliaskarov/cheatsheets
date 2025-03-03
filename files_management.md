@@ -16,3 +16,9 @@ with open("myfile.txt", "r") as file1:
     for n in range (0, 2):
         print(file1.readline())
 ```
+
+Add line 3:
+```
+with open("myfile.txt", "a") as file1:
+    file1.write("\nline3: cde")
+```
