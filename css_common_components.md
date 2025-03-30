@@ -3,7 +3,7 @@
 ## Position
 
 Specifies the type of positioning method used for an element.
-Positioning determines how an element is placed within its containing block and how it interacts with other elements.
+    Positioning determines how an element is placed within its containing block and how it interacts with other elements.
 
     Example: position: relative;
         This sets the element's position relative to its normal position.
