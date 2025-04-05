@@ -189,3 +189,75 @@ function checkStockLevels(products) {
 
 checkStockLevels(products);
 ```
+
+
+### JS Blocks
+
+**appendChild()**
+```
+//Creates the element <p> and text “Hello World”. Appends Hello World <p> to the HTML document.
+<head>
+ <script>
+  function addPara() {
+   var newPara = document.createElement(“p”);
+   var newText = document.createTextNode(“Hello World!”);
+   newPara.appendChild(newText);
+   document.body.appendChild(newPara);
+  }
+ </script>
+</head>
+<body onload=“addPara()”>
+</body>
+```
+
+**Arrays**
+```
+const Beatles = [“Ringo”, “Paul”, “George”, “John”];
+//Here Beatles[0] is “Ringo”.
+```
+
+
+**Date()**
+Create date from string
+```
+//create a new date from a string
+var newDate = new Date(“2021-1-17 13:15:30”);
+
+//create a new date instance representing 17 Jan 2021 00:00:00
+//note that the month number is zero-based
+var newDate = new Date(2021, 0, 17);
+```
+
+**document.createElement()**
+```
+//Creates the element <p> and text “Hello World”. Appends Hello World <p> to the HTML document.
+<head>
+ <script>
+  function addPara() {
+   var newPara = document.createElement(“p”);
+   var newText = document.createTextNode(“Hello World!”);
+   newPara.appendChild(newText);
+   document.body.appendChild(newPara);
+  }
+ </script>
+</head>
+<body onload=“addPara()”>
+</body>
+```
+
+**document.createTextNode()**
+```
+//Creates the element <p> and text “Hello World”. Appends Hello World <p> to the HTML document.
+<head>
+ <script>
+  function addPara() {
+   var newPara = document.createElement(“p”);
+   var newText = document.createTextNode(“Hello World!”);
+   newPara.appendChild(newText);
+   document.body.appendChild(newPara);
+  }
+ </script>
+</head>
+<body onload=“addPara()”>
+</body>
+```
