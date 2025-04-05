@@ -106,6 +106,18 @@ while(do_more) {
 }
 ```
 
+### for loop
+
+print 1 to 10 adding 4 to each value
+```
+let minVal = 1;
+let maxVal = 10;
+
+for (let i = minVal; i <= maxVal; i++) {
+  console.log(i + 4); // Add 4 to each value
+}
+```
+
 ### Functions
 #### Calculate total sales
 ```
