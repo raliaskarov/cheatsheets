@@ -432,3 +432,11 @@ typeof "abc";
 typeof new String("abc");
 ```
 
+convert number to string
+```
+num = 123
+num.toString()
+//or
+String(num)
+```
+
