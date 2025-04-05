@@ -227,7 +227,10 @@ var newDate = new Date("2021-1-17 13:15:30");
 //note that the month number is zero-based
 var newDate = new Date(2021, 0, 17);
 ```
-
+Assign current local date and time
+```
+var newDate = new Date();
+```
 **document.createElement()**
 ```
 //Creates the element <p> and text "Hello World". Appends Hello World <p> to the HTML document.
