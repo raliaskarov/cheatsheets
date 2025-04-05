@@ -3,6 +3,25 @@
 
 ## Operators
 
+## Variable
+let vs var
+let is block-scope
+```
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+console.log(i); // ❌ ReferenceError: i is not defined
+
+```
+
+var is function scoped
+```
+for (var i = 0; i < 3; i++) {
+  console.log(i);
+}
+console.log(i); // ✅ 3 — `i` is still accessible here!
+
+```
 ### Assignment operators
 ```
 = operator is used to assign value on the right to the variable on left
