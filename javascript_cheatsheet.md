@@ -440,3 +440,26 @@ num.toString()
 String(num)
 ```
 
+object vs primitive
+```
+var a = new String("Hello"); // a is a String object
+var b = "Hello";             // b is a string primitive
+
+if (a === b) {
+  alert("Same");
+} else {
+  alert("Different"); // 👈 This is what runs
+}
+
+```
+
+if you write 
+```
+"hello".toUpperCase
+```
+code will do in background
+```
+let temp = new String("hello"); // temporarily
+temp.toUpperCase();
+
+```
