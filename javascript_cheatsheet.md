@@ -195,25 +195,25 @@ checkStockLevels(products);
 
 **appendChild()**
 ```
-//Creates the element <p> and text “Hello World”. Appends Hello World <p> to the HTML document.
+//Creates the element <p> and text "Hello World". Appends Hello World <p> to the HTML document.
 <head>
  <script>
   function addPara() {
-   var newPara = document.createElement(“p”);
-   var newText = document.createTextNode(“Hello World!”);
+   var newPara = document.createElement("p");
+   var newText = document.createTextNode("Hello World!");
    newPara.appendChild(newText);
    document.body.appendChild(newPara);
   }
  </script>
 </head>
-<body onload=“addPara()”>
+<body onload="addPara()">
 </body>
 ```
 
 **Arrays**
 ```
-const Beatles = [“Ringo”, “Paul”, “George”, “John”];
-//Here Beatles[0] is “Ringo”.
+const Beatles = ["Ringo", "Paul", "George", "John"];
+//Here Beatles[0] is "Ringo".
 ```
 
 
@@ -221,7 +221,7 @@ const Beatles = [“Ringo”, “Paul”, “George”, “John”];
 Create date from string
 ```
 //create a new date from a string
-var newDate = new Date(“2021-1-17 13:15:30”);
+var newDate = new Date("2021-1-17 13:15:30");
 
 //create a new date instance representing 17 Jan 2021 00:00:00
 //note that the month number is zero-based
@@ -230,34 +230,202 @@ var newDate = new Date(2021, 0, 17);
 
 **document.createElement()**
 ```
-//Creates the element <p> and text “Hello World”. Appends Hello World <p> to the HTML document.
+//Creates the element <p> and text "Hello World". Appends Hello World <p> to the HTML document.
 <head>
  <script>
   function addPara() {
-   var newPara = document.createElement(“p”);
-   var newText = document.createTextNode(“Hello World!”);
+   var newPara = document.createElement("p");
+   var newText = document.createTextNode("Hello World!");
    newPara.appendChild(newText);
    document.body.appendChild(newPara);
   }
  </script>
 </head>
-<body onload=“addPara()”>
+<body onload="addPara()">
 </body>
 ```
 
 **document.createTextNode()**
 ```
-//Creates the element <p> and text “Hello World”. Appends Hello World <p> to the HTML document.
-<head>
- <script>
-  function addPara() {
-   var newPara = document.createElement(“p”);
-   var newText = document.createTextNode(“Hello World!”);
-   newPara.appendChild(newText);
-   document.body.appendChild(newPara);
-  }
- </script>
-</head>
-<body onload=“addPara()”>
-</body>
+//Creates the element <p> and text "Hello World". Appends Hello World <p> to the HTML document.
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function addPara() {
+                newPara = document.createElement('p');
+                newText = document.createTextNode('Hello World!');
+                newPara.appendChild(newText);
+                document.body.appendChild(newPara);
+            };
+        </script>
+        </head>
+        <body onload='addPara()'>
+        </body>
+</html>
 ```
+
+**document.getElementByID()**
+```
+//Changes the content of the div to "Hello World!"
+<div id="div1">
+ <p>Hello</p>
+ <p>Hello</p>
+</div>
+
+<script>
+ document.getElementById("div1").innerHTML = "<p>Hello World!</p>";
+</script>
+```
+
+**document.getElementsByTagName()**
+```
+//Gets an array of all elements in a document with the <p> tag.
+var tagNameArray = document.getElementsByTagName("p");
+```
+
+**document.write()**
+```
+//Writes "Hello World" to the output stream.
+document.write("Hello World")
+```
+
+
+**element.getAttribute()**
+```
+ //Removes the CSS style color blue
+<div id="div1" style="color: blue"></div>
+<script>
+ var div1 = document.getelementById("div1").getAttribute("style");
+</script> 
+```
+
+**element.innerHTML()**
+```
+//Changes the content of the div to "Hello World!"
+<div id="div1">
+ <p>Hello</p>
+ <p>Hello</p>
+</div>
+
+<script>
+ document.getElementById("div1").innerHTML = "<p>Hello World!</p>";
+</script>
+```
+
+**element.removeAttribute()**
+```
+//Removes the CSS style color blue
+<div id="div1" style="color: blue"></div>
+<script>
+ var div1 = document.getelementById("div1").getAttribute("style");
+</script>
+```
+
+**element.setAttribute()**
+```
+//In all elements named "theImage" sets the name of all src attributes to "another.gif"
+document.getElementById("theImage").setAttribute("src", "another.gif");
+```
+
+**element.style()**
+```
+//Changes the CSS style color from blue to red
+<div id="div1" style="color: blue"></div>
+<script>
+ var div1 = document.getelementById("div1");
+ div1.style.color = "red";
+</script>
+```
+
+**Error Objects**
+```
+//Catch statement defines a block of code to be executed if an error occurs in the try block.
+catch (err) {
+ document.getElementById("myfile").innerHTML = err.name;
+}
+//Creates custom error message
+throw new Error("Only values 1-10 are permitted");
+```
+
+
+**History Objects**
+```
+//Go back two pages if the history exists in the history list.
+history.go(-2);
+```
+
+**insertBefore()**
+```
+//Creates a new <li> element and places it in the elementList before the first child of <ul>
+let newLI = document.createElement("li");
+newLI.innerText = "new Element";
+let elementList = document.getElementById("thisList");
+elementList.insertBefore(newLI, elementList.childNodes[0]);
+```
+
+**Location Objects**
+```
+//Returns the hostname property
+let myhost = location.hostname;
+newLI.innerText = "new Element";
+```
+
+**Navigator Objects**
+```
+//Retrieves the name of the browser
+var browsername = navigator.appName;
+```
+
+**onload()**
+```
+//Executes myFunction after MyHTMLPage has been loaded
+document.getElementById("MyHTMLPage").onload = function () {myFunction};
+```
+
+**replaceChild()**
+```
+//Creates a new node and replaces the second element in "thisList" with the word "blue"
+let secondBullet = document.createTextNode("blue");
+var myList = document.getElementById("thisList").childNodes[1];
+myList.replaceChild(secondBullet,   myList.childNodes[1]);
+```
+
+**Screen Objects**
+```
+//Returns the height and width of the user’s screen
+var height=screen.height;
+var width=screen.width;
+```
+
+**Window Objects**
+```
+//Opens a new browser window with the specified URL
+window.open("http://www.w3schools.com")
+```
+
+
+**window.open()**
+```
+//Opens a new window that opens the IBM home page and has a width of 600 and a height of 800)
+let thisWindow = window.open("http://www.ibm.com", "myWindow", "width"=600, "height"=800);
+```
+
+**window.scrollTo()**
+```
+//Scrolls the window to the pixel located at the coordinate (20, 200)
+window.scrollTo(20, 200);
+```
+
+**Wrapper Objects**
+```
+/Enables the use of properties and methods of the String class such as the property n.length
+let n = new String ("abc");
+
+//Returns string
+typeof "abc";
+
+//Returns object
+typeof new String("abc");
+```
+
