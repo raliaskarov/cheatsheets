@@ -257,6 +257,9 @@ var newDate = new Date("2021-1-17 13:15:30");
 //create a new date instance representing 17 Jan 2021 00:00:00
 //note that the month number is zero-based
 var newDate = new Date(2021, 0, 17);
+
+// get year
+Date().getFullYear()
 ```
 Assign current local date and time
 ```
@@ -529,6 +532,14 @@ temp.toUpperCase();
 <div onmouseover="console.log('hovering')">Hover me</div>
 <button onclick="alert('Clicked!')">Click Me</button>
 <body onload="init()">  
+```
+
+## Calculations
+```
+const I = 5
+const p = 1000
+var amount = parseInt(p) + parseFloat(I); // this returns 1005
+var amount_concatenate = p + I; // this returns 10005
 ```
 
 
