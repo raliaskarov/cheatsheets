@@ -372,6 +372,14 @@ document.getElementById("theImage").setAttribute("src", "another.gif");
 </script>
 ```
 
+**.this**
+```
+// Modify the code of the Car object directly to add a color parameter in the constructor
+function Car(color) {
+  this.color = color;
+}
+```
+
 **Error Objects**
 ```
 //Catch statement defines a block of code to be executed if an error occurs in the try block.
