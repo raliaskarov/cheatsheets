@@ -312,6 +312,27 @@ var newDate = new Date();
 </script>
 ```
 
+Change value of an element
+```
+<script>
+function updateRate() {
+    var rateval = document.getElementById("rate").value;  
+    console.log("Received rate value", rateval)  
+    document.getElementById("rateval").innerText = rateval
+}
+</script>
+
+<br/>
+Rate <input id="rate"
+	type="range"  min="1" max="20" value="10.25" step="0.25"
+	onchange="updateRate()"
+	>
+<span id="rateval">
+10.25
+</span>%<br/>
+
+```
+
 **document.getElementsByTagName()**
 ```
 //Gets an array of all elements in a document with the <p> tag.
@@ -502,3 +523,13 @@ let temp = new String("hello"); // temporarily
 temp.toUpperCase();
 
 ```
+
+### Event Binders
+```
+<div onmouseover="console.log('hovering')">Hover me</div>
+<button onclick="alert('Clicked!')">Click Me</button>
+<body onload="init()">  
+```
+
+
+### Input fields
