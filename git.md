@@ -84,8 +84,24 @@ Revert commit by applying new commit
 ```
 git revert HEAD
 ```
+## Manage repo
+### Rename repo
 
+Rename origin into upstream
+```
+git remote rename origin upstream
+```
 
+Remove repo
+```
+git remote rm origin
+```
+
+Generate patches for email submission
+Create patches for the last three commits
+```
+git format-patch HEAD~3
+```
 
 ## Branches
 ```
@@ -110,6 +126,23 @@ git pull origin master
 git pull origin main
 ```
 
+## Pull request
+Generate summary of pending changes 
+```
+git request-pull origin/main <myfork or branch_name>
+```
+
+Send a collection of patches as emails
+```
+git send-email *.patch
+```
+
+Apply patchesto the repository
+```
+git am <patchfile.patch>
+```
+
+
 ## Other
 ```
 git version // version of git installed to system
@@ -122,3 +155,22 @@ git diff HEAD~1 GEAD (last vs second last)
 git diff <branch-1> <branch-2> (compare specific branches)
 ```
 
+**git daemon**
+Expose repositories via the Git:// protocol. The Git protocol is a lightweight protocol designed for efficient communication between Git clients and servers.
+```
+git daemon –base-path=/path/to/repositories
+```
+
+**instaweb**
+Instantly launch a web server to browse repositories. It provides a simplified way to view repository contents through a web interface without the need for configuring a full web server.
+```
+git instaweb –httpd=webrick
+```
+
+**rerere**
+Reuse recorded resolution of previously resolved merge conflicts. 
+ - rerere.enabled configuration option needs to be set to "true" (git config –global rerere.enabled true) for git rerere to work. 
+ - git rerere only applies to conflicts that have been resolved using the same branch and commit.
+```
+git rerere
+```
