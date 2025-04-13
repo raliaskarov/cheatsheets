@@ -115,6 +115,11 @@ Switch to main branch
 git checkout main
 ```
 
+Create branch and switch into it
+```
+git checkout -b my1stbranch
+```
+
 Clone
 ```
 git clone <repo URL>
