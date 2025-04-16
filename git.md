@@ -35,6 +35,11 @@ git remote
 git remove -v // include urls
 ```
 
+set upstream branch
+```
+git push --set-upstream origin bug-fix-typo
+```
+
 ## Update changes
 check for changes
 ```
