@@ -1,5 +1,22 @@
 # Common commands to use SSH
 
+## Creating SSH
+ssh key generation
+```
+ssh-keygen -t rsa -b 4096 -C "<your email address>"
+```
+
+start ssh agent
+```
+eval "$(ssh-agent -s)"
+```
+
+add key to ssh agent
+```
+ssh-add ~/.ssh/id_rsa
+```
+
+
 ## Keyboard forwarding on Putty
 
 1. Launch PuTTY on your PC.
