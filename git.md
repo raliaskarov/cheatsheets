@@ -136,6 +136,11 @@ git pull origin master
 git pull origin main
 ```
 
+Pull from a branch when both local and remote have changes not committed
+```
+git pull --no-rebase origin bug-fix-typo
+```
+
 ## Pull request
 Generate summary of pending changes 
 ```
