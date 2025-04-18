@@ -21,6 +21,12 @@ add key to ssh agent
 ssh-add ~/.ssh/id_rsa
 ```
 
+**adding to github**
+copy pub key
+```
+cat ~/.ssh/id_rsa.pub | clip
+cat ~/.ssh/id_rsa.pub | wl-copy
+```
 
 ## Keyboard forwarding on Putty
 
