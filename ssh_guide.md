@@ -29,6 +29,23 @@ cat ~/.ssh/id_rsa.pub | wl-copy
 ```
 past this key to github > settings > ssh keys > add ssh key
 
+**use**
+authenticate - will look for private key in ~/.ssh by default
+```
+ssh git@github.com
+```
+
+use key from custom folder
+```
+ssh -i /path/to/your/key git@github.com
+```
+
+copy key to usb
+```
+cp ~/.ssh/id_rsa /media/usb/my_id_rsa
+cp ~/.ssh/id_rsa.pub /media/usb/my_id_rsa.pub
+```
+
 ## Keyboard forwarding on Putty
 
 1. Launch PuTTY on your PC.
