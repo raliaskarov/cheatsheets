@@ -118,5 +118,40 @@ nmcli networking off
 ```
 nmcli radio wifi on
 nmcli radio wifi off
+```
+
+## 6. Sound
+**Archlinux**
+Install packs
+```
+sudo pacman -S pipewire pipewire-audio pipewire-pulse wireplumber \
+sof-firmware alsa-ucm-conf alsa-card-profiles alsa-lib \
+pavucontrol
+```
+
+enable
+```
+systemctl --user enable --now pipewire pipewire-pulse wireplumber
+```
+
+reboot
+```
+sudo reboot
+```
+
+check
+```
+pactl list short sinks
+```
+
+launch
+```
+pavucontrol
+```
+
+test
+```
+pw-play /usr/share/sounds/freedesktop/stereo/bell.oga
+```
 
 
