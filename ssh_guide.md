@@ -27,6 +27,7 @@ copy pub key
 cat ~/.ssh/id_rsa.pub | clip
 cat ~/.ssh/id_rsa.pub | wl-copy
 ```
+past this key to github > settings > ssh keys > add ssh key
 
 ## Keyboard forwarding on Putty
 
