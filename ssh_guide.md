@@ -6,6 +6,11 @@ ssh key generation
 ssh-keygen -t rsa -b 4096 -C "<your email address>"
 ```
 
+cs into .ssh
+```
+cd ~/.ssh
+```
+
 start ssh agent
 ```
 eval "$(ssh-agent -s)"
