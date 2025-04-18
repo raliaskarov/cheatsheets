@@ -154,4 +154,18 @@ test
 pw-play /usr/share/sounds/freedesktop/stereo/bell.oga
 ```
 
+## 7. VPN
+Step-by-Step: L2TP/IPsec VPN on Arch Linux (GUI method)
+```
+sudo pacman -S networkmanager-l2tp strongswan xl2tpd
+```
+connection manager
+```
+sudo pacman -S network-manager-applet
+```
+launch manager
+```
+nm-connection-editor
+```
+
 
