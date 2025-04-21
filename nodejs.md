@@ -81,6 +81,7 @@ console.log(result); //outputs home.html to the console
 
 ### Util
 Use to debug e.g. print to console iteration through loop
+This will place i to placeholder %d (similar to python print(f"Priting text {i} now") function
 utilDemo.js
 ```
 let util = require('util');
@@ -100,3 +101,5 @@ The loop has executed 7 time(s).
 The loop has executed 8 time(s).
 The loop has executed 9 time(s).
 The loop has executed 10 time(s).
+
+Note: this can be executed without util but engine internally will use util anyway.
