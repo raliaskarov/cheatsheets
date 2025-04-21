@@ -103,3 +103,34 @@ The loop has executed 9 time(s).
 The loop has executed 10 time(s).
 
 Note: this can be executed without util but engine internally will use util anyway.
+
+### Url
+get parts from URL:
+urlDemo.js
+```
+const url = require('url');
+let webAddress = 'http://localhost:2000/index.html?lastName=Kent&firstName=Clark';
+let qry = url.parse(webAddress, true);
+let qrydata = qry.query; //returns an object: {lastName: 'Kent', firstName: 'Clark'}
+console.log(qrydata.firstName); //outputs Clark
+console.log(qrydata);
+```
+
+### Querystring
+Parse query (not whole url)
+querystringDemo.js
+```
+let qry = require('querystring');
+let qryParams = qry.parse('lastName=Kent&firstName=Clark');
+console.log(qryParams.firstName); //returns Clark
+```
+
+# Package Manager
+Local install
+```
+npm install <package_name>
+```
+Machine-wide install (global)
+```
+npm install -g <package_name>
+```
