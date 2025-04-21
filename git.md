@@ -29,6 +29,11 @@ Link to new github repo
 git remote add origin https://github.com/<your-username>/<new-repository-name>.git
 ```
 
+or to use ssh
+```
+git remote set-url origin git@github.com:yourusername/yourrepo.git
+```
+
 List remote repos assiciated with local repo
 ```
 git remote
