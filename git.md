@@ -72,7 +72,7 @@ git push
 # or
 git push origin main
 ```
-force to accept self signed certificate
+NOT RECOMMENDED! force to accept self signed certificate
 ```
 git -c http.sslVerify=false clone https://example.com/path/to/git
 ```
