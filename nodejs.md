@@ -134,3 +134,25 @@ Machine-wide install (global)
 ```
 npm install -g <package_name>
 ```
+
+### Import modules
+Import
+```
+    // addTwoNos.mjs
+    function addTwo(num) {
+      return num + 4;
+    }
+    export { addTwo };
+    // app.js
+    import { addTwo } from './addTwoNos.mjs';
+    // Prints: 8
+    console.log(addTwo(4));
+```
+
+Require
+The require() statement essentially reads and executes a JavaScript file before returning the export object. 
+```
+    module.exports = 'Hello Programmers';
+    let msg = require('./messages.js');
+    console.log(msg);
+```
