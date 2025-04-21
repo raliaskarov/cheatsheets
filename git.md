@@ -189,3 +189,34 @@ Reuse recorded resolution of previously resolved merge conflicts.
 ```
 git rerere
 ```
+
+## Use ssh
+After you generated key pair and uploaded public key to GH
+
+check key is in place
+```
+ls ~/.ssh/
+```
+
+See if remote is using HTTPs
+```
+git remote -v
+```
+if response looks like
+
+origin  git@github.com:yourusername/yourrepo.git (fetch)
+origin  git@github.com:yourusername/yourrepo.git (push)
+
+
+then switch to ssh:
+```
+git remote set-url origin git@github.com:yourusername/yourrepo.git
+```
+
+Test
+```
+ssh -T git@github.com
+```
+
+Should give: "Hi yourusername! You've successfully authenticated, but GitHub does not provide shell access."
+
