@@ -29,8 +29,74 @@ http.createServer(function (req, res) {
     res.end(); // end of response from server
 }).listen(3000); // server listens on port 6000
 ```
-run:
+
+To execute run:
 ```
 node server.js
 ```
 visit http://localhost:3000
+
+### File System
+**Read file, async**
+readfile.js
+```
+const fs = require('fs');
+// Asynchronously read the file 'sample.txt'
+fs.readFile('sample.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    // Print the contents of 'sample.txt' to the console
+    console.log(data);
+});
+```
+**Read file, sync**
+readFileSyncDemo.js
+```
+const fs = require('fs');
+// Read the contents of the file '/content.md' synchronously and store them in 'data'
+const data = fs.readFileSync('content.md', 'utf8');
+// Print the contents of 'content.md' to the console
+console.log(data);
+```
+
+### OS
+Get operating system and architecture
+getOsDemo.js
+```
+let os = require('os');
+console.log("Computer OS Platform Info : " + os.platform());
+console.log("Computer OS Architecture Info: " + os.arch());
+```
+
+### Path
+This will return home.html
+pathDemo.js
+```
+const path = require('path');
+let result = path.basename('/content/index/home.html');
+console.log(result); //outputs home.html to the console
+```
+
+### Util
+Use to debug e.g. print to console iteration through loop
+utilDemo.js
+```
+let util = require('util');
+let str = 'The loop has executed %d time(s).';
+for (let i = 1; i <= 10; i++) {
+    console.log(util.format(str, i)); //outputs 'The loop has executed i time(s)'
+}
+```
+Returns:
+The loop has executed 1 time(s).
+The loop has executed 2 time(s).
+The loop has executed 3 time(s).
+The loop has executed 4 time(s).
+The loop has executed 5 time(s).
+The loop has executed 6 time(s).
+The loop has executed 7 time(s).
+The loop has executed 8 time(s).
+The loop has executed 9 time(s).
+The loop has executed 10 time(s).
