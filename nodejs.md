@@ -136,7 +136,7 @@ npm install -g <package_name>
 ```
 
 ### Import modules
-Import
+**Import**
 ```
     // addTwoNos.mjs
     function addTwo(num) {
@@ -149,10 +149,171 @@ Import
     console.log(addTwo(4));
 ```
 
-Require
+**Require**
 The require() statement essentially reads and executes a JavaScript file before returning the export object. 
 ```
     module.exports = 'Hello Programmers';
     let msg = require('./messages.js');
     console.log(msg);
 ```
+
+## Promises, Async/Await, Axios
+### Promises
+Create promise
+```
+// Creating a new Promise object and assigning it to the variable myPromise
+const myPromise = new Promise((resolve, reject) => {
+
+  // Simulating a condition with a boolean variable 'success'
+  let success = true; 
+
+  // If the condition is true, call resolve to mark the promise as fulfilled
+  if (success) { 
+    resolve("The operation was successful!");
+  } else { 
+    // If the condition is false, call reject to mark the promise as rejected
+    reject("The operation failed!");
+  } 
+});
+```
+
+Use .then() and .catch() to chain multiple asynchronous operations in sequence
+```
+// Execute the promise and handle the fulfilled and rejected states
+myPromise
+
+  // Handle the resolved state of the promise
+  .then((message) => { 
+    // This block will execute if the promise is resolved
+    console.log(message); // "The operation was successful!"
+  }) 
+
+  // Handle the rejected state of the promise
+  .catch((error) => { 
+    // This block will execute if the promise is rejected
+    console.error(error); // "The operation failed!"
+  });
+```
+
+Example: read file with application of .then() and .catch()
+```
+// Import the 'fs' module and use its promise-based methods
+const fs = require('fs').promises;
+
+// Read the content of the file 'example.txt' with 'utf8' encoding
+fs.readFile('example.txt', 'utf8')
+
+  // Handle the resolved state of the promise
+  .then((data) => { 
+    // This block will execute if the file is read successfully
+    console.log(data); // Print the file content to the console
+  }) 
+
+  // Handle the rejected state of the promise
+  .catch((err) => { 
+    // This block will execute if there is an error reading the file
+    console.error('Error reading file:', err); // Print the error message to the console
+  });
+```
+
+### Async and await**
+Using async/await does same job as .then() and .catch() to sequence operations but code is easier to read
+```
+// Async function that wraps the operation
+async function myAsyncFunction() {
+  // Simulating a condition with a boolean variable 'success'
+  let success = true;
+
+  // If the condition is true, resolve with a success message
+  if (success) {
+    return "The operation was successful!";
+  } else {
+    // If the condition is false, throw an error to simulate rejection
+    throw new Error("The operation failed!");
+  }
+}
+// Using async function to handle Promise
+async function executeAsyncFunction() {
+  try {
+    // Await the async function call to get the result
+    const result = await myAsyncFunction();
+    console.log(result); // Output the result if successful
+  } catch (error) {
+    console.error(error.message); // Handle and output any errors
+  }
+}
+
+// Call the async function to execute
+executeAsyncFunction();
+```
+
+### Axios
+Install
+```
+npm install axios
+```
+
+**Make GET request**
+```
+// Import the axios library
+
+const axios = require('axios');
+
+// Using the axios.get method to make a GET request to the specified URL.
+
+axios.get('https://api.example.com/data')
+
+  // If the request is successful, the `.then` block is executed.
+
+  .then(response => {
+    // The response object contains the data returned from the server.
+    // We log the `data` property of the response to the console.
+
+    console.log(response.data);
+  })
+
+  // If there is an error during the request, the `.catch` block is executed.
+
+  .catch(error => {
+    
+    // We log an error message to the console along with the error object.
+    // This helps in debugging and understanding what went wrong with the request.
+    
+    console.error('Error fetching data:', error);
+  });
+```
+
+**Make POST request**
+```
+// Import the axios library.
+
+const axios = require('axios');
+
+// Data to be sent in the POST request. This is a JavaScript object containing the user information.
+const data = {
+  name: 'John Doe',
+  age: 30
+};
+
+// Using the axios.post method to make a POST request to the specified URL with the data object.
+axios.post('https://api.example.com/users', data)
+  
+// If the request is successful, the `.then` block is executed.
+  .then(response => {
+    
+// The response object contains the data returned from the server.
+// We log a message along with the `data` property of the response to the console.
+    
+    console.log('User created:', response.data);
+  })
+  // If there is an error during the request, the `.catch` block is executed.
+  
+    .catch(error => {
+    // We log an error message to the console along with the error object.
+    // This helps in debugging and understanding what went wrong with the request.
+    
+    console.error('Error creating user:', error);
+  });
+```
+
+
