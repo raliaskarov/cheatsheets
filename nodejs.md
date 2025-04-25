@@ -159,6 +159,18 @@ The require() statement essentially reads and executes a JavaScript file before 
 
 ## Promises, Async/Await, Axios
 ### Promises
+
+An object that is returned by some methods, representing eventual completion or failure is called promise. The code continues to run without getting blocked until the promise is fulfilled or an exception is thrown. 
+
+Promise syntax
+```
+axios.get(url).then(
+//do something
+).catch(
+//do something
+)
+```
+
 Create promise
 ```
 // Creating a new Promise object and assigning it to the variable myPromise
@@ -216,7 +228,53 @@ fs.readFile('example.txt', 'utf8')
   });
 ```
 
+**Another example of promise use case**
+Promises are used when the processing time of the function we invoke takes time like remote URL access, I/O operations file reading, etc. 
+```
+let prompt = require('prompt-sync')();
+let fs = require('fs');
+const methCall = new Promise((resolve,reject)=>{
+    let filename = prompt('What is the name of the file ?');
+    try {
+      const data = fs.readFileSync(filename, {encoding:'utf8', flag:'r'});
+      resolve(data);
+    } catch(err) {
+      reject(err)
+    }
+});
+console.log(methCall);
+methCall.then(
+  (data) => console.log(data),
+  (err) => console.log("Error reading file")
+);
+```
+
+ 
 ### Async and await**
+**Async-await**
+Wait for promise insite async function
+```
+const axios = require('axios').default;
+let url = "some remote url"
+async function asyncCall() {
+  console.log('calling');
+  const result = await axios.get(url);
+  console.log(result.data);
+}
+asyncCall();
+```
+
+**Callback**
+Callbacks are methods that are passed as parameters. They are invoked within the method to which they are passed as a parameter, conditionally or unconditionally. We use callbacks with a promise to process the response or errors. 
+```
+//function(res) and function(err) are the anonymous callback functions
+axios.get(url).then(function(res) {
+    console.log(res);
+}).catch(function(err) {
+    console.log(err)
+})
+```
+
 Using async/await does same job as .then() and .catch() to sequence operations but code is easier to read
 ```
 // Async function that wraps the operation
@@ -248,9 +306,29 @@ executeAsyncFunction();
 ```
 
 ### Axios
+**--> The axios package** handles HTTP requests and returns a promise object. 
+ 
 Install
 ```
 npm install axios
+```
+
+Simple axios code
+```
+const axios = require('axios').default;
+const connectToURL=(url)=>{
+  const req=axios.get(url);
+  console.log(req);
+  req.then(resp=>{
+  console.log("Fulfilled");
+  console.log(resp.data);
+  })
+  .catch(err=>{
+  console.log("Rejected");
+  });
+}
+connectToURL('valid-url')
+connectToURL('invalid-url')
 ```
 
 **Make GET request**
@@ -342,4 +420,43 @@ req.then(resp => {
 
 ```
 Conversion to readable json done by ***JSON.stringify(courseDetails, null, 4)*** otherwise code would display OBJECT 
+
+## Event handling
+### Event handlers
+**object.on()**
+Identifies event handler called when event occurs
+```
+http.request( options, function(response) {
+ let buffer = ``;
+ ...
+ response.on('data', function(chunk) {
+   buffer += chunk;
+ });
+ response.on('end', function() {
+   console.log(buffer);
+ });
+}).end();
+```
+
+## Don't dos
+### List of situations to avoid
+**Callback Hell a.k.a. Pyramid of Doom**
+Nested callbacks stacked below one another
+```
+const makeCake = nextStep => {
+  buyIngredients(function(shoppingList) {
+    combineIngredients(bowl, mixer, function(ingredients){
+      bakeCake(oven, pan, function(batter) {
+        decorate(icing, function(cake) {
+          nextStep(cake);
+        });
+      });
+    });
+  });
+};
+```
+
+
+
+
 
