@@ -9,7 +9,7 @@ sudo pacman -S nvm
 ```
 ensure that nvm loaded every time console is opened
 ```
-source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.shWhere in the callback function does a Node.js generally pass an error object?
 ```
 also load it now
 ```
@@ -455,6 +455,7 @@ const makeCake = nextStep => {
   });
 };
 ```
+>> to make something to happen sequentially rather use ***async/await***
 
 
 
