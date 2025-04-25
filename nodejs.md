@@ -158,6 +158,8 @@ The require() statement essentially reads and executes a JavaScript file before 
 ```
 
 ## Promises, Async/Await, Axios
+
+
 ### Promises
 
 An object that is returned by some methods, representing eventual completion or failure is called promise. The code continues to run without getting blocked until the promise is fulfilled or an exception is thrown. 
@@ -304,7 +306,7 @@ async function executeAsyncFunction() {
 // Call the async function to execute
 executeAsyncFunction();
 ```
-** Promise vs Callback
+** Promise vs Callback**
 Both do same thing using different method
 | Callback | Promise |
 |:---|:---|
@@ -312,6 +314,48 @@ Both do same thing using different method
 | Use a function passed as a parameter to handle the result | Use `.then()` and `.catch()` methods to handle success and failure |
 | Can get messy if many async operations happen (called "callback hell") | Cleaner and easier to read, especially when chaining multiple async tasks |
 | You have to manually check errors inside the callback | Errors automatically move to `.catch()` block |
+
+**Synchronous vs callback vs Promise**
+This is http request **without** callback/promise
+```
+const req = http.get('http://example.com');
+req.on('response', (res) => {
+    // Handle response
+});
+
+```
+This is simple but will block code from further execution until response is received
+
+This is same operation with **callback**
+```
+const http = require('http');
+
+http.get('http://example.com', (res) => {
+    // Optional callback
+    res.on('data', (chunk) => {
+        console.log(`Data chunk: ${chunk}`);
+    });
+});
+What’s happening:
+
+1. You send a GET request to http://example.com.
+2. The request goes out over the network.
+3. Meanwhile, Node.js keeps going — it doesn’t block.
+4. Later, when the server responds, Node emits a response event.
+5. Your callback (the one in .on('response', callback)) handles that event.
+
+This is same operation but in modern way with **promise**
+```
+const axios = require('axios');
+
+axios.get('http://example.com')
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(err => {
+        console.error(err);
+    });
+```
 
 
 **error parameter in callback and promise**
