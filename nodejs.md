@@ -304,6 +304,15 @@ async function executeAsyncFunction() {
 // Call the async function to execute
 executeAsyncFunction();
 ```
+** Promise vs Callback
+Both do same thing using different method
+| Callback | Promise |
+|:---|:---|
+| Older method (classic Node.js style) | Newer method (ES6+ modern JavaScript) |
+| Use a function passed as a parameter to handle the result | Use `.then()` and `.catch()` methods to handle success and failure |
+| Can get messy if many async operations happen (called "callback hell") | Cleaner and easier to read, especially when chaining multiple async tasks |
+| You have to manually check errors inside the callback | Errors automatically move to `.catch()` block |
+
 
 **error parameter in callback and promise**
 Callbacks: ```callback(err, data)``` → error is 1st parameter
