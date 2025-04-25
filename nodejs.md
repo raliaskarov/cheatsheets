@@ -305,6 +305,10 @@ async function executeAsyncFunction() {
 executeAsyncFunction();
 ```
 
+**error parameter in callback and promise**
+Callbacks: ```callback(err, data)``` → error is 1st parameter
+Promises: ```.then(data).catch(err)``` → handled separately
+
 ### Axios
 **--> The axios package** handles HTTP requests and returns a promise object. 
  
