@@ -169,3 +169,64 @@ nm-connection-editor
 ```
 
 
+# Curl
+## POST request
+**Post login request**
+write curl post request for {
+    "user":{
+        "name":"abc",
+        "id":1
+    }
+} 
+credentials for enpoint http://localhost:5000/login
+```
+curl -X POST http://localhost:5000/login \
+     -H "Content-Type: application/json" \
+     -u username:password \
+     -d '{
+           "user": {
+             "name": "abc",
+             "id": 1
+           }
+         }'
+```
+
+Login an save auth token to coockies
+```
+curl -X POST http://localhost:5000/login \
+     -c cookies.txt \
+     -H "Content-Type: application/json" \
+     -d '{"user": {"name": "abc", "id": 1}}'
+```
+
+**GET REQUEST**
+GET request to http://localhost:5000/user
+```
+curl -X GET http://localhost:5000/user
+```
+If the endpoint requires authentication, you can include it like this:
+with basic auth:
+```
+curl -X GET http://localhost:5000/user \
+     -u username:password
+```
+with bearer token:
+```
+curl -X GET http://localhost:5000/user \
+     -H "Authorization: Bearer YOUR_TOKEN_HERE"
+```
+with cookies:
+```
+curl -X GET http://localhost:5000/user \
+     -b cookies.txt
+```
+
+**POST request add user**
+POST request for localhost:5000/user with params
+Enter the firstName as 'Bob', lastName as 'Smith', email as 'bobsmith@gamil.com' and DOB as '1/1/1978' for a new user:
+```
+curl -X POST http://localhost:5000/user \
+     -b cookies.txt \
+     -H "Content-Type: application/x-www-form-urlencoded" \
+     --data "firstName=Bob&lastName=Smith&email=bobsmith@gamil.com&DOB=1/1/1978"
+```
