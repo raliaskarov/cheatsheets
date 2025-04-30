@@ -230,3 +230,10 @@ curl -X POST http://localhost:5000/user \
      -H "Content-Type: application/x-www-form-urlencoded" \
      --data "firstName=Bob&lastName=Smith&email=bobsmith@gamil.com&DOB=1/1/1978"
 ```
+
+**PUT**
+Write PUT request to update DOB of bobsmith@gamil.com to 1/1/1981
+```
+curl -X PUT "http://localhost:5000/user/bobsmith@gamil.com?DOB=1/1/1981" \
+     -b cookies.txt
+```
