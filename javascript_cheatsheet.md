@@ -544,3 +544,20 @@ var amount_concatenate = p + I; // this returns 10005
 
 
 ### Input fields
+
+# Sorting
+Sort dates array
+```
+const users = [
+  { DOB: '2000-01-01' },
+  { DOB: '1980-01-01' }
+];
+```
+sorting done with:
+```
+users.sort((a, b) => {
+  let d1 = new Date(a.DOB); // 2000
+  let d2 = new Date(b.DOB); // 1980
+  return d1 - d2;           // positive → b comes first
+});
+```
