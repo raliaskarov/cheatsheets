@@ -94,6 +94,31 @@ Revert commit by applying new commit
 ```
 git revert HEAD
 ```
+
+### If git add . with untintended content 
+clear cash
+```
+git rm -r --cached .
+```
+
+add gitignore and add only it
+```
+git add .gitignore
+git commit -m "Ensure .gitignore is correct"
+```
+
+clear
+```
+git rm -r --cached .
+```
+
+add all again
+```
+git add .
+```
+
+remove 
+
 ## Manage repo
 ### Rename repo
 
