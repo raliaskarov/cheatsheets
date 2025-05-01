@@ -343,6 +343,7 @@ What’s happening:
 3. Meanwhile, Node.js keeps going — it doesn’t block.
 4. Later, when the server responds, Node emits a response event.
 5. Your callback (the one in .on('response', callback)) handles that event.
+```
 
 This is same operation but in modern way with **promise**
 ```
