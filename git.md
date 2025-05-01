@@ -96,7 +96,7 @@ git revert HEAD
 ```
 
 ### If git add . with untintended content 
-clear cash
+clear index
 ```
 git rm -r --cached .
 ```
@@ -107,7 +107,7 @@ git add .gitignore
 git commit -m "Ensure .gitignore is correct"
 ```
 
-clear
+remove everything from index
 ```
 git rm -r --cached .
 ```
