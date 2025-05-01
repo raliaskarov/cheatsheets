@@ -652,6 +652,121 @@ app.post('/verify-code', (req, res) => {
 app.listen(3000, () => console.log('Server running on port 3000'));
 ```
 
+# Express
+
+Dependencies
+```
+"dependencies":{"express":"4.x"}
+```
+
+new express()
+```
+const express = require(“express”);
+const app = new express();
+```
+
+express.listen()
+```
+app.listen(3333, () => {
+  console.log(“Listening at
+  http://localhost:3333)
+})
+```
+
+express.get()
+```
+// handles GET queries to end point /user/about/id.
+app.get(“user/about/:id”, (req,res)=>{
+  res.send(“Response about user ”
+  +req.params.id)
+
+})
+```
+
+express.post()
+```
+// handles POST queries to the same end point.
+app.post(“user/about/:id”, (req,res)=>{
+  res.send(“Response about user ”
+  +req.params.id)
+})
+```
+
+express.use()
+```
+const express = require("express");
+const app = new express();
+function myLogger(req, res, next){
+  req.timeReceived = Date();
+  next();
+}
+app.get(“/”, (req, res)=>{
+  res.send(“Request received at
+  "+req.timeReceived+“ is a success!")
+})
+```
+
+express.Router()
+```
+const express = require(“express”);
+const app = new express();
+let userRouter = express.Router();
+let itemRouter = express.Router();
+userRouter.use(function (req, res, next){
+  console.log(“User quert time:”, Date());
+  next();
+})
+userRouter.get(“/:id”, function (req, res,
+  next) {
+  res.send(“User ”+req.params.id+ “ last
+  successful login ”+Date())
+})
+app.listen(3333, () => {
+  console.log(“Listening at http://localhost:3333)
+})
+```
+
+express.static()
+```
+const express = require(“express”);
+const app = new express();
+app.use(express.static("cad220_staticfiles"))
+app.listen(3333, () => {
+  console.log("Listening at  http://localhost:3333")
+})
+```
+
+jsonwebtoken.sign()
+```
+if (uname === "user" && pwd === "password") {
+    return res.json({
+      token: jsonwebtoken.sign({ user: "user" }, JWT_SECRET),
+    });
+  }
+```
+
+jsonwebtoken.verify()
+```
+const verificationStatus =   jsonwebtoken.verify(tokenValue, "aVeryVerySecretString");
+```
+
+project structure example
+```
+test-project/
+   node_modules/
+   config/
+     db.js           //Database connection and configuration
+     credentials.js  //Passwords/API keys for external services used by your app
+   models/            //For mongoose schemas
+      items.js
+      prices.js
+   routes/           //All routes for different entities in different files
+      items.js
+      prices.js
+   app.js
+   routes.js         //Require all routes in this and then require this file in
+   package.json
+```
 
 
 
