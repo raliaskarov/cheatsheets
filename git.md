@@ -78,6 +78,12 @@ git push
 # or
 git push origin main
 ```
+
+Push and overwrite remote 
+```
+git push -u origin master --force
+```
+
 NOT RECOMMENDED! force to accept self signed certificate
 ```
 git -c http.sslVerify=false clone https://example.com/path/to/git
