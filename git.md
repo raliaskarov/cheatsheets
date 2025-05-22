@@ -155,6 +155,7 @@ git format-patch HEAD~3
 git branch // list branches
 git branch <new-branch> // create new branch
 git branch -d <branch-name> // delete branch
+git push origin --delete master // delete branch in remote
 ```
 
 Switch to main branch
