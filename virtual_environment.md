@@ -2,7 +2,7 @@
 
 # Create venv
 cd <PATH>
-python -m virtualenv install env
+python -m venv env
 .\env\Scripcts\activate
 pip intall -r requirements.txt
 
