@@ -30,6 +30,12 @@ git remote add origin https://github.com/<your-username>/<new-repository-name>.g
 ```
 
 or to use ssh
+if no remote set yet
+```
+git remote add origin git@github.com:yourusername/yourrepo.git
+```
+
+if remote exists
 ```
 git remote set-url origin git@github.com:yourusername/yourrepo.git
 ```
