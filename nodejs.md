@@ -674,6 +674,22 @@ app.listen(3333, () => {
 })
 ```
 
+Sample basic hellow world app
+```
+const express = require('express');
+const app = express();
+
+// Root route (GET is default)
+app.get('/', (req, res) => {
+    res.send('Hello world');
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+```
 express.get()
 ```
 // handles GET queries to end point /user/about/id.
