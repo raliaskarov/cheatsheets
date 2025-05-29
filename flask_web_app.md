@@ -82,7 +82,7 @@ python3 server.py
 ```
 
 # Decorators
-Allo to reuse code. E.g. decorateor for json
+Allow to reuse code. E.g. decorateor for json
 ```
 def jsonify_decorator(function):
     def modifyOutput():
