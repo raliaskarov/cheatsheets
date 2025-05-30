@@ -110,3 +110,157 @@ Enter a number = 73
 Enter another number - 87
 {'output': 160}
 ```
+
+# Additional functions
+## Access Forma Data with flask.request.form
+use in POST requests
+```
+<form method="POST" action="/login">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit" value="Submit">
+</form>
+```
+
+e.g. to access username and password
+```
+from flask import request
+
+@app.route('/login', methods=['POST'])
+def login():
+    username = request.form['username']
+    password = request.form['password']
+    # process login here
+```
+
+## Redirect 
+```
+from flask import redirect
+
+@app.route('/admin')
+def admin():
+    return redirect('/login')
+```
+
+## Generate dynamic urls with flask.url_for
+```
+from flask import url_for
+
+@app.route('/admin')
+def admin():
+    return redirect(url_for('login'))
+
+@app.route('/login')
+def login():
+    return "<Login Page>"
+```
+
+## Handling different HTTP requests
+```
+@app.route('/data', methods=['GET', 'POST'])
+def data():
+    if request.method == 'POST':
+        # process POST request
+    if request.method == 'GET':
+        # process GET request
+```
+
+For this in HTML file allow GET and POST requests in form
+```
+<!-- For POST -->
+<form method="POST" action="/data">
+    <!-- Your input fields here -->
+    <input type="submit" value="Submit">
+</form>
+
+<!-- For GET -->
+<a href="/data">Fetch data</a>
+```
+
+# CRUD
+
+## Create
+HTTP form
+```
+<form method="POST" action="/create">
+    <input type="text" name="name">
+    <input type="submit" value="Create">
+</form>
+```
+
+Python:
+```
+@app.route('/create', methods=['GET', 'POST'])
+def create():
+    if request.method == 'POST':
+        # Access form data
+        name = request.form['name']
+        # Create a new record with the name
+        record = create_new_record(name)  # Assuming you have this function defined
+        # Redirect user to the new record
+        return redirect(url_for('read', id=record.id))
+    # Render the form for GET request
+    return render_template('create.html')
+```
+
+## Read
+```
+@app.route('/read/<int:id>', methods=['GET'])
+def read(id):
+    # Get the record by id
+    record = get_record(id)  # Assuming you have this function defined
+    # Render a template with the record
+    return render_template('read.html', record=record)
+```
+
+## Update
+
+HTML:
+```
+<form method="POST" action="/update/{{record.id}}">
+    <input type="text" name="name" value="{{record.name}}">
+    <input type="submit" value="Update">
+</form>
+```
+
+Python code:
+```
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    if request.method == 'POST':
+        # Access form data
+        name = request.form['name']
+        # Update the record with the new name
+        update_record(id, name)  # Assuming you have this function defined
+        # Redirect user to the updated record
+        return redirect(url_for('read', id=id))
+    
+    # Render the form for GET request with current data
+    record = get_record(id)  # Assuming you have this function defined
+    return render_template('update.html', record=record)
+```
+
+## Delete
+HTML
+```
+<form method="POST" action="/delete/{{record.id}}">
+    <input type="submit" value="Delete">
+</form>
+```
+
+Python
+```
+@app.route('/delete/<int:id>', methods=['POST'])
+def delete(id):
+    # Delete the record
+    delete_record(id)  # Assuming you have this function defined
+    # Redirect user to the homepage
+    return redirect(url_for('home'))
+```
+
+
+
+
+
+
+
