@@ -258,9 +258,35 @@ def delete(id):
     return redirect(url_for('home'))
 ```
 
+# Working with headers
+## Content type
+To set content type
+(a) add mimetype to return
+```
+from flask import Response
 
+@app.route('/text')
+def plain_text():
+    return Response("Hello, World!", mimetype='text/plain')
+```
 
+(b) set header manualy
+```
+from flask import make_response
 
+@app.route('/json')
+def custom_json():
+    data = '{"name": "Alice"}'
+    response = make_response(data)
+    response.headers['Content-Type'] = 'application/json'
+    return response
+```
 
+(3) for dict Flask will automatically set json type
+```
+@app.route('/api')
+def api():
+    return {"name": "Alice"}
+```
 
 
