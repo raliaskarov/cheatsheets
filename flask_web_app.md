@@ -67,6 +67,7 @@ server.py content:
 from flask import Flask
 
 app = Flask("Hello Word...")
+# or app = Flask(__name__)
 
 @app.route("/")
 def hello():
@@ -74,6 +75,7 @@ def hello():
 
 if __name__=="__main__":
     app.run(debug=True)
+    #or app.run(debug=True, host = "0.0.0.0", port=5000)
 ```
 
 run app
