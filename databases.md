@@ -144,3 +144,158 @@ Then visit:
 
 ## In PGAdmin see tables:
 Servers → Local PostgreSQL → Databases → mydb → Schemas → public → Tables
+
+
+# Django manage.py Command Glossary
+
+This glossary provides an overview of frequently used Django `manage.py` commands and what they do.
+
+## Commands
+
+### `runserver`
+**Usage:**  
+```bash
+python manage.py runserver
+```
+**Description:**  
+Starts a lightweight development web server on the local machine.
+
+---
+
+### `migrate`
+**Usage:**  
+```bash
+python manage.py migrate
+```
+**Description:**  
+Applies database migrations. It creates or updates tables in the database to match Django models.
+
+---
+
+### `makemigrations`
+**Usage:**  
+```bash
+python manage.py makemigrations
+```
+**Description:**  
+Generates new migration files based on changes in models.
+
+---
+
+### `createsuperuser`
+**Usage:**  
+```bash
+python manage.py createsuperuser
+```
+**Description:**  
+Creates a new admin (superuser) account to access the Django admin interface.
+
+---
+
+### `shell`
+**Usage:**  
+```bash
+python manage.py shell
+```
+**Description:**  
+Opens an interactive Python shell preloaded with Django context (models, settings, etc.).
+
+---
+
+### `startapp <app_name>`
+**Usage:**  
+```bash
+python manage.py startapp blog
+```
+**Description:**  
+Creates a new Django application folder structure with default files.
+
+---
+
+### `startproject <project_name>`
+**Usage:**  
+```bash
+django-admin startproject myproject
+```
+**Description:**  
+Creates a new Django project with settings, URLs, and wsgi/asgi config.
+
+---
+
+### `check`
+**Usage:**  
+```bash
+python manage.py check
+```
+**Description:**  
+Checks the entire Django project for common errors without running migrations or starting the server.
+
+---
+
+### `showmigrations`
+**Usage:**  
+```bash
+python manage.py showmigrations
+```
+**Description:**  
+Displays a list of all migrations and their applied/unapplied status.
+
+---
+
+### `sqlmigrate <app_name> <migration_name>`
+**Usage:**  
+```bash
+python manage.py sqlmigrate blog 0001
+```
+**Description:**  
+Displays the SQL statements for a given migration.
+
+---
+
+### `collectstatic`
+**Usage:**  
+```bash
+python manage.py collectstatic
+```
+**Description:**  
+Collects all static files into one directory for deployment.
+
+---
+
+### `flush`
+**Usage:**  
+```bash
+python manage.py flush
+```
+**Description:**  
+Deletes all data from the database and resets it to the initial state.
+
+---
+
+### `loaddata <fixture_file>`
+**Usage:**  
+```bash
+python manage.py loaddata data.json
+```
+**Description:**  
+Loads data from a fixture file into the database.
+
+---
+
+### `dumpdata`
+**Usage:**  
+```bash
+python manage.py dumpdata > data.json
+```
+**Description:**  
+Outputs all data in the database as a JSON fixture.
+
+---
+
+## Notes
+
+- Always activate your virtual environment before using these commands.
+- Use `--help` with any command for more options. For example:
+  ```bash
+  python manage.py migrate --help
+  ```
