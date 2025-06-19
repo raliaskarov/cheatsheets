@@ -75,7 +75,7 @@ source env/bin/activate
 pip install pgadmin4
 ```
 
-In pgadmin folder create ```config_local.py```:
+In pgadmin folder ```usr/pgadmin4/web``` create ```config_local.py```:
 ```
 import os
 
@@ -94,6 +94,9 @@ mkdir -p ~/.pgadmin
 ```
 
 ## Launch PGAdmin
+```
+python3 /usr/pgadmin4/web/pgAdmin4.py
+```
 Visit http://127.0.0.1:5050
 Add server:
 Log in, then:
