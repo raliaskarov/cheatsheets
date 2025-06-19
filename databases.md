@@ -61,6 +61,10 @@ CREATE DATABASE mydb OWNER myuser;
 \q
 exit
 ```
+In psql shell: change pwd
+```
+ALTER USER postgres PASSWORD 'your_new_password';
+```
 
 ## Install PGAdmin
 ```
