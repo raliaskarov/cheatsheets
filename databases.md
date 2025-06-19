@@ -28,6 +28,11 @@ if uploaded_file is not None:
 # Postgre SQL on Linux Arch
 
 ## Install PostgreSQL
+Check is postgress is installed
+```
+which psql
+```
+
 Install
 ```
 sudo pacman -Syu postgresql
