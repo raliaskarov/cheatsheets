@@ -39,6 +39,7 @@ sudo pacman -Syu postgresql
 ```
 
 
+## Launch database
 Initialise and start
 ```
 sudo -iu postgres
@@ -49,6 +50,7 @@ sudo systemctl enable postgresql
 sudo systemctl start postgresql
 ```
 
+## Manage users
 Create user
 ```
 sudo -iu postgres
@@ -65,6 +67,25 @@ In psql shell: change pwd
 ```
 ALTER USER postgres PASSWORD 'your_new_password';
 ```
+
+## Clear database
+Drop all tables
+Enter shell via ```psql```
+
+Drop tables:
+```
+DO $$ DECLARE
+    r RECORD;
+BEGIN
+    -- Drop all tables in the public schema
+    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'public') LOOP
+        EXECUTE 'DROP TABLE IF EXISTS public.' || quote_ident(r.tablename) || ' CASCADE';
+    END LOOP;
+END $$;
+```
+
+
+# Administration
 
 ## Install PGAdmin
 ```
