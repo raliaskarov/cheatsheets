@@ -237,3 +237,18 @@ Write PUT request to update DOB of bobsmith@gamil.com to 1/1/1981
 curl -X PUT "http://localhost:5000/user/bobsmith@gamil.com?DOB=1/1/1981" \
      -b cookies.txt
 ```
+
+
+# Battery Settings Arch Linux
+sudo nano /etc/systemd/sleep.conf
+[Sleep]
+
+Use platform suspend (freeze) then hibernate after 30 minutes
+SuspendState=freeze
+HibernateDelaySec=30min
+
+
+Turn on NTP synchronization so your system clock (and hardware RTC) stay accurate
+sudo timedatectl set-ntp true
+
+
