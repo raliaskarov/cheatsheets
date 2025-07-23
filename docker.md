@@ -2,7 +2,8 @@
 
 Study notes on containerisation and Docker
 
-Reference docker file
+## Reference docker file
+Dockerfile
 ```
 # Use the official Node.js image as the base image
 FROM node:14
@@ -43,3 +44,63 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 CMD curl 
 # Set a non-root user for security purposes
 USER node
 ```
+
+## Working with Docker
+Typical command to copy modify and save app
+See docker version
+
+```
+docker --version
+```
+
+
+List images
+```
+docker images
+```
+
+Pull image from Docker Hub
+```
+docker pull hello-world
+```
+
+Run hello world image
+```
+docker run hello-world
+```
+
+List containers that were ran
+```
+docker ps -a
+```
+
+Remove container
+```
+docker container rm <container_id>
+```
+
+Build image
+```
+docker build . -t myimage:v1
+```
+
+Run image as a container
+```
+docker run -dp 8080:8080 myimage:v1
+```
+
+Check app responds
+```
+curl localhost:8080
+```
+
+Stop container
+```
+docker stop $(docker ps -q)
+```
+
+Check that container stopped
+```
+docker ps
+```
+
