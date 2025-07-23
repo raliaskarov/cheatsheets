@@ -1,4 +1,4 @@
-<img width="783" height="435" alt="image" src="https://github.com/user-attachments/assets/5c063e05-e627-4c21-8d0c-f3ffad2821b2" /># Docker
+# Docker
 
 Study notes on containerisation and Docker
 
