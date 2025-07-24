@@ -432,4 +432,9 @@ Start proxy (in development only)
 kubectl proxy
 ```
 
+Ping
+```
+curl -L localhost:8001/api/v1/namespaces/sn-labs-$USERNAME/services/hello-world/proxy
+```
+
 
