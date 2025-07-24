@@ -257,6 +257,18 @@ Turn on NTP synchronization so your system clock (and hardware RTC) stay accurat
 sudo timedatectl set-ntp true
 ```
 
+### Bind to lid close action
+Edit
+```
+sudo nano /etc/systemd/logind.conf
+```
+
+Set settings to:
+```
+[Logind]
+HandleLidSwitch=suspend-then-hibernate
+```
+
 ## Configure to boot from swap
 Verify swap partition
 ```
