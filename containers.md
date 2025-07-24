@@ -177,6 +177,10 @@ Show labels of the pod
 ```
 kubectl get pod <pod-name> --show-labels
 ```
+Get more details about the pod
+```
+kubectl describe pod hello-world
+```
 
 Add label
 ```
@@ -187,6 +191,12 @@ Add pod
 ```
 kubectl run my-test-pod --image=nginx --restart=Never
 ```
+
+Delete pod
+```
+kubectl delete pod hello-world
+```
+
 
 ## Working with .yaml config
 ### StatefulSet
@@ -277,3 +287,149 @@ kubectl get daemonsets
 ```
 Numbers under fields DESIRED CRRENT READY UP-TO-DATE and AVAILABLE indicate number  of respective pods
 NODE SELECTOR: Specifies which nodes in the cluster the DaemonSet should run on. By default, it's set to <none>, meaning the DaemonSet is not restricted to specific nodes.
+
+
+## Create pod with an imperative command
+Get clusters
+```
+kubectl config get-clusters
+```
+
+Get contexts
+```
+kubectl config get-contexts
+```
+
+Get pods
+```
+kubectl get pods
+```
+
+Export namespace as env variable
+```
+export MY_NAMESPACE=sn-labs-$USERNAME
+```
+
+
+Build and push
+```
+docker build -t us.icr.io/$MY_NAMESPACE/hello-world:1 . && docker push us.icr.io/$MY_NAMESPACE/hello-world:1
+```
+
+Run the "hello-world" image as a container in Kubernetes.
+```
+kubectl run hello-world --image us.icr.io/$MY_NAMESPACE/hello-world:1 --overrides='{"spec":{"template":{"spec":{"imagePullSecrets":[{"name":"icr"}]}}}}'
+```
+
+## Create pod with an imperative configuration file
+Create file
+```
+touch hello-worlds-create.yaml
+```
+
+content
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-world
+spec:
+  containers:
+  - name: hello-world
+    image: us.icr.io/<my_namespace>/hello-world:1
+    ports:
+    - containerPort: 8080
+  imagePullSecrets:
+  - name: icr
+
+```
+
+```
+kubectl create -f hello-world-create.yaml
+```
+
+verify
+```
+kubectl get pods
+```
+
+## Create pod with an declarative command
+This is better for production
+```touch hello-world-apply.yaml``` with content:
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  generation: 1
+  labels:
+    run: hello-world
+  name: hello-world
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: hello-world
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: hello-world
+    spec:
+      containers:
+      - image: us.icr.io/<my_namespace>/hello-world:1
+        imagePullPolicy: Always
+        name: hello-world
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 2m
+            memory: 30Mi
+          requests:
+            cpu: 1m
+            memory: 10Mi   
+      imagePullSecrets:
+      - name: icr
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+```
+
+Apply
+```
+kubectl apply -f hello-world-apply.yaml
+```
+
+Verify that deployment is created
+```
+kubectl get deployments
+```
+
+List pods
+```
+kubectl get pods
+```
+
+## Expose to internet
+Expose
+```
+kubectl expose deployment/hello-world
+```
+
+Get services
+```
+kubectl get services
+```
+
+Start proxy (in development only)
+```
+kubectl proxy
+```
+
+
