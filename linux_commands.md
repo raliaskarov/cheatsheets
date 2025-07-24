@@ -240,15 +240,58 @@ curl -X PUT "http://localhost:5000/user/bobsmith@gamil.com?DOB=1/1/1981" \
 
 
 # Battery Settings Arch Linux
+
+## Enable suspend then hibernate
 sudo nano /etc/systemd/sleep.conf
 [Sleep]
 
 Use platform suspend (freeze) then hibernate after 30 minutes
+```
+AllowSuspendThenHibernate=True
 SuspendState=freeze
 HibernateDelaySec=30min
-
+```
 
 Turn on NTP synchronization so your system clock (and hardware RTC) stay accurate
+```
 sudo timedatectl set-ntp true
+```
 
+## Configure to boot from swap
+Verify swap partition
+```
+$ lsblk -f | grep swap
+```
 
+Edit conf
+```
+sudo nano /etc/mkinitcpio.conf
+```
+
+Add resume in your HOOKS, after udev but before filesystems
+e.g.
+```
+HOOKS=(base udev autodetect modconf block keyboard keymap resume filesystems fsck)
+```
+
+Regenerate initramfs images
+```
+sudo mkinitcpio -P
+```
+
+## Tell kernel where to resume
+Edit
+```
+/etc/default/grub
+```
+
+Add instruction to resume from swap partition
+```
+- GRUB_CMDLINE_LINUX="quiet"
++ GRUB_CMDLINE_LINUX="quiet resume=UUID=12345678-9abc-def0-1234-56789abcdef0"
+```
+
+## Test
+```
+sudo systemctl hibernate
+```
