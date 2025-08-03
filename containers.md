@@ -438,3 +438,54 @@ curl -L localhost:8001/api/v1/namespaces/sn-labs-$USERNAME/services/hello-world/
 ```
 
 
+# Working with autoscaling and secrets
+## Prepare
+Get files
+`git clone https://github.com/raliaskarov/tutorial_docker.git`
+`cd tutorial_docker`
+`cd lab5_k8-scaling-and-secrets-mgmt`
+
+Build
+`export MY_NAMESPACE=sn-labs-$USERNAME`
+`docker build . -t us.icr.io/$MY_NAMESPACE/myapp:v1`
+`ibmcloud cr images`
+
+Deploy
+`kubectl apply -f deployment.yaml`
+`kubectl get pods`
+`kubectl port-forward deployment.apps/myapp 3000:3000`
+`docker push us.icr.io/$MY_NAMESPACE/myapp:v1`
+`kubectl expose deployment/myapp`
+
+## VPA
+Apply vertical autoscaler
+`kubectl apply -f vpa.yaml`
+`kubectl get vpa`
+`kubectl describe vpa myvpa`
+
+## HPA
+Apply horizontal autoscaler
+`kubectl apply -f hpa.yaml`
+`kubectl proxy`
+
+Test HPA in another window
+```
+for i in `seq 100000`; do curl -L localhost:8001/api/v1/namespaces/sn-labs-$USERNAME/services/myapp/proxy; done
+```
+
+Monitor HPA in 3rd window
+```
+kubectl get hpa myhpa --watch
+```
+Ctr + C to break
+
+```
+kubectl get hpa myhpa
+```
+
+## Secrets
+Apply secrets
+`kubectl apply -f secret.yaml`
+`kubectl get secret`
+`kubectl get deployment` 
+
