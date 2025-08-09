@@ -307,3 +307,14 @@ Add instruction to resume from swap partition
 ```
 sudo systemctl hibernate
 ```
+
+
+# Config Terminal
+Disable bracketed paste
+```
+bind 'set enable-bracketed-paste off'
+```
+Permanent fix:
+
+- Add that line to your ~/.bashrc or ~/.zshrc.
+- Or, upgrade your shell/terminal so bracketed paste is handled proper
