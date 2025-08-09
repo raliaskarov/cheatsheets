@@ -83,6 +83,7 @@ docker container rm <container_id>
 ```
 
 Build image
+Bake your app into a reusable image.
 ```
 docker build . -t myimage:v1
 ```
@@ -107,6 +108,38 @@ Check that container stopped
 docker ps
 ```
 
+### Docker compose
+```
+docker-compose up
+```
+Launch all the services defined in your compose file together (Node app, Mongo, etc.).
+
+looks for ```docker-compose.yml``` file that looks like:
+```
+version: '3.9'
+
+services:
+  # Mongodb service
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+
+  # Node api service
+  api:
+    image: nodeapp
+    ports:
+      - 3030:3030
+    depends_on: 
+      - mongo_db
+
+volumes:
+  mongo_data: {}
+```
 
 # Kubernetes
 # Using Kubernetes
