@@ -80,6 +80,36 @@ function App() {
 export default App;
 ```
 
+### Creating component
+Mounting phase order (React 16.3+):
+
+1. constructor()
+2. static getDerivedStateFromProps()
+3. render()
+4. componentDidMount()
+
+```
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("1. constructor");
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log("2. getDerivedStateFromProps");
+    return null;
+  }
+
+  render() {
+    console.log("3. render");
+    return <h1>Hello</h1>;
+  }
+
+  componentDidMount() {
+    console.log("4. componentDidMount");
+  }
+}
+```
 ### Function Component with function keyword
 Function component starts with function keyword along with name of the component and includes html tags within return. It also exports component name by default
 ```
