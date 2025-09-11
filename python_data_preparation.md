@@ -1,5 +1,12 @@
 # Code for data preparation
 
+## Display options
+
+```
+pd.options.display.max_columns = 70
+pd.options.display.max_rows = 70
+pd.options.display.float_format = '{:,.3f}'.format
+```
 
 ## Dealing with null values
 
