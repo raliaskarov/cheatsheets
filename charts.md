@@ -69,5 +69,11 @@ fig.update_layout(
 
 <img width="1688" height="625" alt="image" src="https://github.com/user-attachments/assets/4589989f-be02-48e5-95ad-57f9bca1ec57" />
 
+## Matrix
 
+```
+# Let's use Seaborn to display a heatmap for the correlation matrix
+f, ax = plt.subplots(figsize = (15, 9))
+sns.heatmap(correlation_matrix, annot = True);
+```
 
