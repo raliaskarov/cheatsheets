@@ -43,3 +43,13 @@ e.g. % change of assets
 ```
 apple_df['Total Assets change from last quarter'] = apple_df['Total Assets'].pct_change()
 ```
+
+
+## Statistics
+### Correlation matrix
+```
+correlation_matrix = apple_df.corr()
+
+# restrict to numeric columns
+correlation_matrix = apple_df.select_dtypes(include=['number']).corr() 
+```
