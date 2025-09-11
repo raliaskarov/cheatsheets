@@ -8,7 +8,7 @@ def bar_chart_timeseries(df, indicator, x_labels):
   fig = px.bar(df[[x_labels, indicator]],
               x = x_labels,
               y = indicator,
-              text = apple_df[indicator]/1000000)
+              text = df[indicator]/1000000)
   fig.update_layout(title = dict(text = indicator),
                     #xaxis = {'title': 'Report Date', 'tickmode': 'linear'},
                     xaxis = dict(title = x_labels, tickmode = 'array')
