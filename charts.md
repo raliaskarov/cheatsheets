@@ -4,6 +4,7 @@
 
 ### Simple bar chart time series
 ```
+import plotly.express as px
 def bar_chart_timeseries(df, indicator, x_labels):
   fig = px.bar(df[[x_labels, indicator]],
               x = x_labels,
