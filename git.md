@@ -36,8 +36,13 @@ git remote add origin git@github.com:yourusername/yourrepo.git
 ```
 
 if remote exists
+for ssh:
 ```
 git remote set-url origin git@github.com:yourusername/yourrepo.git
+```
+for pat:
+```
+git remote set-url origin https://github.com/username/repo.git
 ```
 
 List remote repos assiciated with local repo
