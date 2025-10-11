@@ -179,9 +179,16 @@ git pull origin master
 git pull origin main
 ```
 
-Pull from a branch when both local and remote have changes not committed
+Pull an overwrite local changed
+
+Download commits from remote 
 ```
-git pull --no-rebase origin bug-fix-typo
+git fetch origin
+```
+
+Reset local to remote, overwrite all local
+```
+git reset --hard origin/master
 ```
 
 ## Pull request
