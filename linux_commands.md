@@ -81,6 +81,20 @@ Unmount
 ```
 sudo umount /mnt/external
 ```
+# Mount iOS devices
+```
+sudo pacman -S ifuse libimobiledevice gvfs-afc
+```
+libimobiledevice → allows Linux to talk to iOS devices
+ifuse → lets you mount the iPad as a filesystem
+gvfs-afc → integrates with GNOME/KDE file managers (for automatic mounting)
+
+Mount 
+```
+ifuse ~/ipad
+```
+
+
 
 # Network Manager 
 ## 1. General Commands:
