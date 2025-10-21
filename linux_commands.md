@@ -44,6 +44,43 @@ sudo apt --fix-broken install
 |-------------------------------------|-------------------------------------|
 |` $ 7za e <PATH_TO_ARCHIVE>`|Extract files from archive (without using directory names)|
 [7za help](https://www.mankier.com/1/7za)
+# Disk management
+
+See disks
+```
+lsblk
+```
+
+Create directory for 
+```
+sudo mkdir -p /mnt/external
+```
+
+Mount
+Fat 32
+```
+sudo mount /dev/sdb1 /mnt/external
+```
+
+exFat
+```
+sudo pacman -S exfatprogs
+```
+
+View system info on disk
+```
+sudo blkid /dev/sda1
+```
+
+View
+```
+ls /mnt/external
+```
+
+Unmount
+```
+sudo umount /mnt/external
+```
 
 # Network Manager 
 ## 1. General Commands:
