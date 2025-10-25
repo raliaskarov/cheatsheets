@@ -377,7 +377,8 @@ df -h
 
 Check top 20 folders ```sudo du -h -d1 / | sort -hr```
 
-Or use util: ```ncdu```
+**Using ncdu util**
+Or use util: ```sudo ncdu / ```
 
 **Clear cache**
 ```rm -rf ~/.cache/*```
