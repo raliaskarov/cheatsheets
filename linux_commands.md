@@ -142,7 +142,7 @@ Replace [INTERFACE] with the name of your network interface (e.g., wlan0).
 ```
 nmcli con delete [CONNECTION_NAME]
 ```
-Replace [CONNECTION_NAME] with the name of the connection you want to delete.
+Replace [CONNECTION_NAME] with the name of the connection you want to delete.udo paccache -r
 
 ## 4. Working with VPN:
 If you use VPNs, nmcli can manage those connections as well.
@@ -384,7 +384,7 @@ Or use util: ```sudo ncdu / ```
 ```rm -rf ~/.cache/*```
 
 **Clean packages cache**
-```sudo pacman -S pacman-contrib``` for pacman cace
+```sudo pacman -S pacman-contrib``` for pacman cace or offiicial ```sudo pacman -Scc```
 Then ```sudo paccache -r``` to clean
 
 **Clean docker images**
