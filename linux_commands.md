@@ -369,3 +369,23 @@ Permanent fix:
 
 - Add that line to your ~/.bashrc or ~/.zshrc.
 - Or, upgrade your shell/terminal so bracketed paste is handled proper
+
+# Disk space
+```
+df -h 
+```
+
+Check top 20 folders ```sudo du -h -d1 / | sort -hr```
+
+Or use util: ```ncdu```
+
+**Clear cache**
+```rm -rf ~/.cache/*```
+
+**Clean packages cache**
+```sudo pacman -S pacman-contrib``` for pacman cace
+Then ```sudo paccache -r``` to clean
+
+**Clean docker images**
+```sudo docker system prune```
+```sudo docker system prune -a``` for all unused images
