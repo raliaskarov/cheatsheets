@@ -97,6 +97,19 @@ add "/home/project" to safe folder
 ```
 git config --global --add safe.directory /home/project
 ```
+
+## Puling from branch while already changed the file
+```
+# 1. Save your current changes temporarily
+git stash
+
+# 2. Switch to your teammate’s branch
+git checkout additional_tests
+
+# 3. Apply your saved changes to this branch
+git stash pop
+```
+
 ## Drop changes
 Rest changes in working directory
 ```
