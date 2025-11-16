@@ -176,6 +176,16 @@ git branch -d <branch-name> // delete branch
 git push origin --delete master // delete branch in remote
 ```
 
+After creating new branch push it to remote
+```
+git push -u origin <new-branch-name>
+```
+
+View remote branches
+```
+git branch -r
+```
+
 Switch to main branch
 ```
 git checkout main
