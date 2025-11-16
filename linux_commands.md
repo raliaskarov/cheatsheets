@@ -91,7 +91,13 @@ gvfs-afc → integrates with GNOME/KDE file managers (for automatic mounting)
 
 Mount 
 ```
+mkdir ~/ipad #if not exists already
 ifuse ~/ipad
+```
+
+Unmount
+```
+fusermount -u ~/ipad
 ```
 
 
