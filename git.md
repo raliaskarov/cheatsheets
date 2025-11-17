@@ -220,6 +220,16 @@ Reset local to remote, overwrite all local
 git reset --hard origin/master
 ```
 
+### When working on a new feature on a new branch
+```
+git checkout main
+git pull
+git checkout -b task3.2_some_new_feature
+git add .
+git commit -m "Implement new feature"
+git push -u origin task3.2_some_new_feature
+```
+
 ## Pull request
 Generate summary of pending changes 
 ```
