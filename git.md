@@ -213,7 +213,7 @@ Download commits from remote
 ```
 git fetch origin
 ```
-```git fetch origin --all --prune``` to download all and stop tracking merged branches
+```git fetch --all --prune``` to download all and stop tracking merged branches
 
 Reset local to remote, overwrite all local
 ```
