@@ -34,6 +34,20 @@ cat ~/.ssh/id_rsa.pub | wl-copy
 ```
 past this key to github > settings > ssh keys > add ssh key
 
+**set hosts**
+
+```
+nano ~/.ssh/config
+```
+
+```
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_github
+    IdentitiesOnly yes
+```
+
 **use**
 authenticate - will look for private key in ~/.ssh by default
 ```
