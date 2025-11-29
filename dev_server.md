@@ -60,7 +60,7 @@ systemctl --user restart code-server
 Open firewall if needed
 ```
 sudo ufw allow 8080
-``1
+```
 
 Access from any browser
 ```
