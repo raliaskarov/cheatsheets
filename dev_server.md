@@ -110,6 +110,14 @@ Now you access:
 
 https://dev.mydomain.com
 
+## errors handling
+IF process duplicated on 8080 
+```
+sudo ss -tulpn | grep 8080 # find processes that occupy 8080
+ps -p 35954 -o pid,ppid,cmd # see detail of that process and parent
+ps -p 35936 -o pid,ppid,cmd # see parent
+```
+
 ## Install tools
 ```
 sudo apt update
