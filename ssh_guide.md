@@ -48,6 +48,11 @@ Host github.com
     IdentitiesOnly yes
 ```
 
+**view fingerptint of existing key**
+```
+ssh-keygen -lf ~/.ssh/id_rsa.pub
+```
+
 **use**
 authenticate - will look for private key in ~/.ssh by default
 ```
