@@ -6,6 +6,11 @@ ssh key generation
 ssh-keygen -t rsa -b 4096 -C "<your email address>"
 ```
 
+or with specified file name
+```
+ssh-keygen -t ed25519 -f ~/.ssh/<file name> -C "email"
+```
+
 cs into .ssh
 ```
 cd ~/.ssh
