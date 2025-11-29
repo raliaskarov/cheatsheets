@@ -81,8 +81,15 @@ sudo nano /etc/caddy/Caddyfile
 ```
 
 Add:
+if domain:
 ```
 dev.mydomain.com {
+    reverse_proxy 127.0.0.1:8080
+}
+```
+if no domain:
+```
+http://YOUR_SERVER_IP {
     reverse_proxy 127.0.0.1:8080
 }
 ```
