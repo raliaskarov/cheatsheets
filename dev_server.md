@@ -52,6 +52,11 @@ password: YOUR_STRONG_PASSWORD
 cert: false
 ```
 
+restrict access
+```
+chmod 600 ~/.config/code-server/config.yaml
+```
+
 Restart:
 ```
 systemctl --user restart code-server
