@@ -57,10 +57,6 @@ restrict access
 chmod 600 ~/.config/code-server/config.yaml
 ```
 
-Restart:
-```
-systemctl --user restart code-server
-```
 
 Open firewall if needed
 ```
