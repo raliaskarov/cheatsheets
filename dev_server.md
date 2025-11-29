@@ -103,3 +103,13 @@ sudo systemctl reload caddy
 Now you access:
 
 https://dev.mydomain.com
+
+## Install tools
+```
+sudo apt update
+sudo apt install -y git build-essential curl wget unzip
+sudo apt install -y python3 python3-pip
+sudo apt install -y nodejs npm
+sudo apt install -y docker.io
+sudo usermod -aG docker dev
+```
