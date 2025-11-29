@@ -67,6 +67,11 @@ Access from any browser
 http://YOUR_SERVER_IP:8080
 ```
 
+## Operate
+```
+sudo systemctl stop code-server@$USER
+```
+
 ## Make HTTPS
 Install Caddy (automatic SSL certificates):
 ```
