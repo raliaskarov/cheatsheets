@@ -125,6 +125,28 @@ Revert commit by applying new commit
 git revert HEAD
 ```
 
+## Merge changes
+Just to see where you stand
+```
+git status
+```
+
+Show commits that are on remote but not in your local main
+```
+git log --oneline --graph --decorate main..origin/main
+```
+
+Show commits that are on your local main but not on remote
+```
+git log --oneline --graph --decorate origin/main..main
+```
+
+Merge and keep full history
+```
+git pull --no-rebase origin main
+```
+
+
 ### If git add . with untintended content 
 clear index
 ```
