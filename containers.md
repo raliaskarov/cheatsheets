@@ -10,6 +10,11 @@ install
 sudo apt install docker.io -y
 ```
 
+add user to docker group
+```
+sudo usermod -aG docker $USER
+```
+
 ## Reference docker file
 Dockerfile
 ```
