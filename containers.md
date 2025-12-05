@@ -5,6 +5,11 @@ Study notes on containerisation
 
 Docker notes
 
+install
+```
+sudo apt install docker.io -y
+```
+
 ## Reference docker file
 Dockerfile
 ```
