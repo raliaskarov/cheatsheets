@@ -118,6 +118,11 @@ Check that container stopped
 docker ps
 ```
 
+Remove unused containers
+```
+docker container prune
+```
+
 ### Docker compose
 ```
 docker-compose up
