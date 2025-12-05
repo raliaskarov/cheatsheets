@@ -397,6 +397,12 @@ Then ```sudo paccache -r``` to clean
 ```sudo docker system prune```
 ```sudo docker system prune -a``` for all unused images
 
+
+Remove unused containers
+```
+docker container prune
+```
+
 View docker volumes
 ```
 docker volume ls
