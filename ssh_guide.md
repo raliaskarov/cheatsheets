@@ -70,6 +70,30 @@ cp ~/.ssh/id_rsa /media/usb/my_id_rsa
 cp ~/.ssh/id_rsa.pub /media/usb/my_id_rsa.pub
 ```
 
+## Verify
+Example:
+```
+ssh-keygen -Y verify \
+  -f allowed_signers \
+  -I contact@grapheneos.org \
+  -n "factory images" \
+  -s tegu-install-2025120400.zip.sig < tegu-install-2025120400.zip
+
+```
+What each part means
+
+-f allowed_signers → file containing GrapheneOS’s public signing key
+
+-I contact@grapheneos.org
+
+→ identity string that must match the one embedded in the signature
+
+-n "factory images" → namespace (must be exactly this string)
+
+-s tegu-install-2025112100.zip.sig → the signature file
+
+< tegu-install-2025112100.zip → the actual factory image
+
 ## Keyboard forwarding on Putty
 
 1. Launch PuTTY on your PC.
