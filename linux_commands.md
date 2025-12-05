@@ -403,6 +403,12 @@ Remove unused containers
 docker container prune
 ```
 
+And clean cache
+```
+docker system prune -a
+docker builder prune --all
+```
+
 View docker volumes
 ```
 docker volume ls
