@@ -123,6 +123,13 @@ Remove unused containers
 docker container prune
 ```
 
+View current containers, volumes
+```
+docker ps -a          # containers
+docker volume ls      # volumes
+docker system df      # overview of remaining space usage
+```
+
 ### Docker compose
 ```
 docker-compose up
