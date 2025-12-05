@@ -43,6 +43,7 @@ sudo apt --fix-broken install
 |Command                              |Action                               |
 |-------------------------------------|-------------------------------------|
 |` $ 7za e <PATH_TO_ARCHIVE>`|Extract files from archive (without using directory names)|
+|`bsdtar xvf myfile.zip` | Extract (x) verbose (v) myfile.zip (f) | 
 [7za help](https://www.mankier.com/1/7za)
 # Disk management
 
