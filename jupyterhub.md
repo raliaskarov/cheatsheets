@@ -22,9 +22,14 @@ docker run -d \
   quay.io/jupyterhub/jupyterhub \
   jupyterhub -f /srv/jupyterhub/jupyterhub_config.py
 ```
-\
 
-if changing confighile
+Confirm it works
+```
+curl -v http://127.0.0.1:8000
+curl -v https://lab.raliaskarov.com
+```
+
+if changing configfile
 ```
 docker stop jupyterhub
 docker rm jupyterhub
