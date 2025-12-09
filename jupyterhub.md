@@ -48,7 +48,7 @@ docker rm jupyterhub
 ```
 relaunch docker
 
-if mounting a volume - get is for user 
+if mounting a volume - get id for user so that user id in container and on server match
 ```
 id dev
 # example output: uid=1000(dev) gid=1000(dev) groups=1000(dev),27(sudo),100(users),110(docker)
@@ -62,6 +62,7 @@ docker exec -it jupyterhub bash
 in shell
 ```
 useradd -m roman
+
 passwd roman
 exit
 ```
