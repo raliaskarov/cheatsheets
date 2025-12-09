@@ -36,7 +36,17 @@ docker rm jupyterhub
 ```
 relaunch docker
 
+add users
+```
+docker exec -it jupyterhub bash
+```
 
+in shell
+```
+useradd -m roman
+passwd roman
+exit
+```
 
 **Troubleshooting**
 view logs
