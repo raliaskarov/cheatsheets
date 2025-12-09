@@ -48,9 +48,9 @@ docker rm jupyterhub
 ```
 relaunch docker
 
-if mounting a volume
+if mounting a volume - get is for user 
 ```
-root@ubuntu-4gb-nbg1-1:~# id dev
+id dev
 # example output: uid=1000(dev) gid=1000(dev) groups=1000(dev),27(sudo),100(users),110(docker)
 ```
 
