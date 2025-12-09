@@ -35,3 +35,11 @@ docker stop jupyterhub
 docker rm jupyterhub
 ```
 relaunch docker
+
+
+
+**Troubleshooting**
+view logs
+```
+docker logs jupyterhub --tail=30
+```
