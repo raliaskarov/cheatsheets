@@ -48,6 +48,12 @@ docker rm jupyterhub
 ```
 relaunch docker
 
+if mounting a volume
+```
+root@ubuntu-4gb-nbg1-1:~# id dev
+# example output: uid=1000(dev) gid=1000(dev) groups=1000(dev),27(sudo),100(users),110(docker)
+```
+
 add users
 ```
 docker exec -it jupyterhub bash
@@ -60,11 +66,8 @@ passwd roman
 exit
 ```
 
-## Mounting a volume ##
-Remove existing container
-```
-docker rm -f jupyterhub
-```
+
+
 
 
 
