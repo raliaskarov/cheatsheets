@@ -14,11 +14,23 @@ c.Authenticator.allow_all = True
 ```
 
 From docker image on HTTPS behind reverse proxy on Caddy
+When no volume:
 ```
 docker run -d \
   --name jupyterhub \
   -p 127.0.0.1:8000:8000 \
   -v /home/dev/jhub/jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py \
+  quay.io/jupyterhub/jupyterhub \
+  jupyterhub -f /srv/jupyterhub/jupyterhub_config.py
+```
+
+Mounting home/dev
+```
+docker run -d \
+  --name jupyterhub \
+  -p 127.0.0.1:8000:8000 \
+  -v /home/dev/jhub/jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py \
+  -v /home/dev:/home/dev \
   quay.io/jupyterhub/jupyterhub \
   jupyterhub -f /srv/jupyterhub/jupyterhub_config.py
 ```
@@ -47,6 +59,14 @@ useradd -m roman
 passwd roman
 exit
 ```
+
+## Mounting a volume ##
+Remove existing container
+```
+docker rm -f jupyterhub
+```
+
+
 
 **Troubleshooting**
 view logs
