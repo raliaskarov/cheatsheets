@@ -2,7 +2,16 @@
 My notes from node JS studies
 
 ## Installation
+
 ### Archlinux
+
+Check if installed
+```
+node -v
+npm -v
+```
+
+
 ```
 sudo pacman -S nodejs
 sudo pacman -S nvm
