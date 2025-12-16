@@ -114,6 +114,7 @@ git stash pop
 Reset changes in working directory
 ```
 git reset
+git rest origin/main # --> use this 
 ```
 and discard all changes in working directory and reset repo to last commit
 ```
