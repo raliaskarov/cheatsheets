@@ -111,16 +111,31 @@ git stash pop
 ```
 
 ## Drop changes
-Rest changes in working directory
+Reset changes in working directory
 ```
-git rest
+git reset
 ```
 and discard all changes in working directory and reset repo to last commit
 ```
 git reset -hard HEAD
 ```
 
-Revert commit by applying new commit
+Rest in soft way - unstage but keep locall changes
+```
+git reset --soft HEAD~1
+# unstage the heavy file
+git reset bigfile.ext
+
+# remove it from git tracking
+git rm --cached bigfile.ext
+
+# commit again
+git add .
+git commit -m "commit without large file"
+```
+
+
+Revert commit by applying new commit - this will remove local files and changes!
 ```
 git revert HEAD
 ```
