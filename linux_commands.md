@@ -52,6 +52,11 @@ See disks
 lsblk
 ```
 
+See where mounted now
+```
+findmnt /
+```
+
 Create directory for 
 ```
 sudo mkdir -p /mnt/external
