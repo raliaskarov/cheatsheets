@@ -16,13 +16,13 @@ After=network.target
 # User who will run the service
 User=dev          
 # credentials (for anki user)
-Environment=SYNC_USER1=ralia:LetsDance2025! 
+Environment=SYNC_USER1=user:pass 
 # data
-Environment=SYNC_BASE=/home/dev/anki_data
+Environment=SYNC_BASE=/home/user/anki_data
 # set host and port
 Environment=SYNC_HOST=0.0.0.0
 Environment=SYNC_PORT=8081
-ExecStart=/home/dev/.venvs/anki-sync-server/bin/python -m anki.syncserver
+ExecStart=/home/user/.venvs/anki-sync-server/bin/python -m anki.syncserver
 Restart=always
 RestartSec=5
 
