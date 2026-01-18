@@ -1,5 +1,13 @@
 # Common commands to use SSH
 
+## folder for ssh
+```
+mkdir ~/.ssh
+hmod 700 ~/.ssh         #700 on the folder means only you can enter it.
+chmod 600 ~/.ssh/*      #600 on the files means only you can read/write them.
+```
+
+
 ## Creating SSH
 ssh key generation
 ```
