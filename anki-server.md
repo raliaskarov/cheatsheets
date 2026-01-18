@@ -1,6 +1,25 @@
 How to set up anki server for flash cards
 
 
+Venv
+```
+python3 -m venv ~/.vevns/anki-sync-server
+source ~/.vevns/anki-sync-server/bin/activate
+```
+
+Install
+```
+pip install anki
+```
+
+Start
+```
+SYNC_USER1=user:pass ~/syncserver/bin/python -m anki.syncserver
+```
+
+***
+Or make it a service
+
 Make
 ```
 sudo nano /etc/systemd/system/ankisync.service
