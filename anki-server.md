@@ -1,5 +1,6 @@
 How to set up anki server for flash cards
 
+Source: https://docs.ankiweb.net/sync-server.html
 
 Venv
 ```
