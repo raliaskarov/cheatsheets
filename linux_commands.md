@@ -1,3 +1,18 @@
+# User management
+See real users
+```
+awk -F: '$3 >= 1000 && $3 != 65534 {print $1}' /etc/passwd
+```
+See running services
+```
+systemctl list-units --type=service --state=running
+```
+
+Switch to user
+```
+su - username
+```
+
 # Software management
 ## yum/get-apt
 |Command                              |Action                               |
