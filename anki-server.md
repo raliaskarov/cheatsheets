@@ -1,6 +1,36 @@
 How to set up anki server for flash cards
 
 
+Make
+```
+sudo nano /etc/systemd/system/ankisync.service
+```
+
+Paste
+```
+[Unit]
+Description=Anki Self-Hosted Sync Server
+After=network.target
+
+[Service]
+# User who will run the service
+User=dev          
+# credentials (for anki user)
+Environment=SYNC_USER1=ralia:LetsDance2025! 
+# data
+Environment=SYNC_BASE=/home/dev/anki_data
+# set host and port
+Environment=SYNC_HOST=0.0.0.0
+Environment=SYNC_PORT=8081
+ExecStart=/home/dev/.venvs/anki-sync-server/bin/python -m anki.syncserver
+Restart=always
+RestartSec=5
+
+```
+
+
+Launch
+
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable --now ankisync.service
