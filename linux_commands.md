@@ -8,6 +8,21 @@ See running services
 systemctl list-units --type=service --state=running
 ```
 
+See running processes
+Overview
+```
+ps aux
+```
+By user
+```
+ps -u joplin
+```
+Tree view
+```
+ps -ef --forest
+```
+
+
 Switch to user
 ```
 su - username
