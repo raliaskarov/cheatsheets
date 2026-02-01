@@ -59,6 +59,11 @@ See which process occupies PORT
 ```
 sudo lsof -i :PORT
 ```
+Kill process with PID and PID
+```
+sudo kill -9 PID PID
+```
+
 # Software management
 ## yum/get-apt
 |Command                              |Action                               |
