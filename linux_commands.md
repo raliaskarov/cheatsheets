@@ -19,6 +19,11 @@ Revoke sudo rights from user
 sudo deluser USERNAME sudo
 ```
 
+# Permissions management
+```
+chown [OPTIONS] OWNER[:GROUP] FILE...
+```
+
 # Service management
 See running services
 ```
