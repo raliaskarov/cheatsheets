@@ -55,6 +55,10 @@ Switch to user
 su - username
 ```
 
+See which process occupies PORT
+```
+sudo lsof -i :PORT
+```
 # Software management
 ## yum/get-apt
 |Command                              |Action                               |
