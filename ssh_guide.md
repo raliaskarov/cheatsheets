@@ -102,6 +102,13 @@ What each part means
 
 < tegu-install-2025112100.zip → the actual factory image
 
+## SSH tunnel
+Port forwarding
+```
+ssh -L 8082:localhost:8082 joplin@46.224.86.85
+```
+This means "Take anything I send to my local port 8082 and 'pipe' it through the encrypted SSH connection to the server. Once it reaches the server, deliver it to the server's own localhost:8082."
+
 ## Keyboard forwarding on Putty
 
 1. Launch PuTTY on your PC.
