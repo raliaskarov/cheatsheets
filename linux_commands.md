@@ -3,11 +3,29 @@ See real users
 ```
 awk -F: '$3 >= 1000 && $3 != 65534 {print $1}' /etc/passwd
 ```
+
+Add user "USERNAME"
+```
+sudo adduser USERNAME
+```
+
+Append groups docker to USERNAME
+```
+sudo usermod -aG docker USERNAME
+```
+
+Revoke sudo rights from user
+```
+sudo deluser USERNAME sudo
+```
+
+# Service management
 See running services
 ```
 systemctl list-units --type=service --state=running
 ```
 
+# Process Management
 See running processes
 Overview
 ```
