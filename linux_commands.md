@@ -22,6 +22,10 @@ Tree view
 ps -ef --forest
 ```
 
+See detail on the process
+```
+ps -o user,cmd -p <PID>
+```
 
 Switch to user
 ```
