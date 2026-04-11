@@ -513,19 +513,3 @@ docker volume rm <volume_name>
 sudo pacman -Syu
 sudo pacman -S wine winetricks
 ```
-
-Office
-```
-# OnlyOffice
-yay -S onlyoffice-bin
-
-# LibreOffice (fresh = latest)
-sudo pacman -S libreoffice-fresh
-```
-
-# Mount cloud storage
-```
-sudo pacman -S rclone
-rclone config  # follow prompts to authorize Google Drive
-rclone sync gdrive:/ /your/hard/drive/
-```
