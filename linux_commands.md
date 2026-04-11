@@ -514,6 +514,15 @@ sudo pacman -Syu
 sudo pacman -S wine winetricks
 ```
 
+Office
+```
+# OnlyOffice
+yay -S onlyoffice-bin
+
+# LibreOffice (fresh = latest)
+sudo pacman -S libreoffice-fresh
+```
+
 # Mount cloud storage
 ```
 sudo pacman -S rclone
