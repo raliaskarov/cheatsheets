@@ -453,6 +453,11 @@ Permanent fix:
 df -h 
 ```
 
+view tree and cleanup
+```
+ncdu
+```
+
 Check top 20 folders ```sudo du -h -d1 / | sort -hr```
 
 **Using ncdu util**
@@ -502,3 +507,16 @@ Remove specific volume
 docker volume rm <volume_name>
 ```
 
+# Run Windows Apps
+
+```
+sudo pacman -Syu
+sudo pacman -S wine winetricks
+```
+
+# Mount cloud storage
+```
+sudo pacman -S rclone
+rclone config  # follow prompts to authorize Google Drive
+rclone sync gdrive:/ /your/hard/drive/
+```
