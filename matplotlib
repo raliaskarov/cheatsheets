@@ -1,0 +1,23 @@
+
+
+## Interactive graphs
+
+import matplotlib
+matplotlib.use('TkAgg')  # or 'Qt5Agg' if you have PyQt5
+
+```
+pip install tk        # for TkAgg
+# or
+pip install PyQt5     # for Qt5Agg
+```
+
+Stack
+```
+matplotlib (your plot code)
+     ↓
+Backend (TkAgg / Qt5Agg)  ← tells matplotlib HOW to draw a window
+     ↓
+Toolkit (Tk / PyQt5)       ← the actual GUI library that opens the OS window
+     ↓
+Your screen
+```
