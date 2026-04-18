@@ -513,3 +513,10 @@ docker volume rm <volume_name>
 sudo pacman -Syu
 sudo pacman -S wine winetricks
 ```
+
+# Screen 
+Change screen brightness (0 - 2)
+```
+sudo brightnessctl --device='tpacpi::kbd_backlight' set 1
+
+```
