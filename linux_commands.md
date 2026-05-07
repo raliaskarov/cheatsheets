@@ -513,6 +513,7 @@ docker volume rm <volume_name>
 sudo pacman -Syu
 sudo pacman -S wine winetricks
 ```
+[User Guide](https://gitlab.winehq.org/wine/wine/-/wikis/Wine-User's-Guide#how-to-install-and-run-windows-programs)
 
 # Screen 
 Change screen brightness (0 - 2)
