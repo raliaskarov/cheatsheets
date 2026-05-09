@@ -521,3 +521,64 @@ Change screen brightness (0 - 2)
 sudo brightnessctl --device='tpacpi::kbd_backlight' set 1
 
 ```
+
+# Hardware
+
+### Logitech K380 fnlock on Arch linux 
+
+Source: https://github.com/jergusg/k380-function-keys-conf
+
+```
+# Install from AUR (using yay or paru)
+yay -S k380-function-keys-conf
+
+# Find your hidraw device number
+ls /sys/class/hidraw/ -l | grep 046D:B342
+
+# Apply (replace X with your number, e.g. hidraw0)
+sudo k380_conf -d /dev/hidrawX -f on
+
+# Make it persist on reconnect
+sudo make reload
+```
+
+
+### HIDRAW
+Human Inerface Devices
+To find device run
+```
+ls /sys/class/hidraw/ -l
+```
+
+E.g. 046D is Logitech's vendor ID and B342 is the K380's product ID. It will be marked as 046D:B342 
+
+
+### UDEV
+Udev is a linux device manager - usb drives, bluetooth keyboards etc 
+
+Example: Make keyboard script run when keyboard is connected 
+
+Create udev rule
+```
+sudo nano /etc/udev/rules.d/99-k380.rules
+```
+
+Add action
+```
+ACTION=="add", SUBSYSTEM=="hid", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="b342", RUN+="/usr/bin/k380_conf -d /dev/%k -f on"
+```
+
+Explainer
+```
+ACTION=="add"                        → when a device is connected
+SUBSYSTEM=="hid"                     → and it's a HID device (keyboard/mouse)
+ATTRS{idVendor}=="046d"              → and vendor ID is Logitech
+ATTRS{idProduct}=="b342"             → and product ID is K380
+RUN+="/usr/bin/k380_conf ..."        → run this command automatically
+```
+
+Reload udev rule
+```
+sudo udevadm control --reload-rules
+```
+
