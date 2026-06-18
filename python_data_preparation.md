@@ -53,3 +53,31 @@ correlation_matrix = apple_df.corr()
 # restrict to numeric columns
 correlation_matrix = apple_df.select_dtypes(include=['number']).corr() 
 ```
+
+
+## Profiling
+
+Convert pandas df to Mermaid class
+```
+def df_to_mermaid_class(df, class_name="DataFrameModel"):
+
+    type_mapping = {
+        'int64': 'int',
+        'int32': 'int',
+        'float64': 'float',
+        'object': 'str',
+        'bool': 'bool',
+        'datetime64[ns]': 'datetime'
+    }
+    
+    diagram = [f"classDiagram\n    class {class_name} {{"]
+    
+    for column, dtype in df.dtypes.items():
+        clean_type = type_mapping[str(dtype)]
+        diagram.append(f"        +{column}: {clean_type}")
+        
+    diagram.append("    }")
+    return "\n".join(diagram)
+
+print(df_to_mermaid_class(fx, "FX"))
+```
