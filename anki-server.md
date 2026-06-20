@@ -56,3 +56,12 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now ankisync.service
 udo systemctl status ankisync.service
 ```
+
+View users and login details
+```
+sudo systemctl cat ankisync.service
+```
+or
+```
+sudo cat /etc/systemd/system/ankisync.service
+```
