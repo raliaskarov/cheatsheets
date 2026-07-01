@@ -77,6 +77,8 @@ set branch
 ```
 git branch -M main
 ```
+-M will force rename of local branch
+
 push
 ```
 git push
