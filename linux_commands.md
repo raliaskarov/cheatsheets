@@ -475,6 +475,12 @@ Or use util: ```sudo ncdu / ```
 ```sudo pacman -S pacman-contrib``` for pacman cace or offiicial ```sudo pacman -Scc```
 Then ```sudo paccache -r``` to clean
 
+or 
+```
+# apt package cache
+sudo apt-get clean
+sudo apt-get autoclean
+```
 **Clean docker images**
 ```sudo docker system prune```
 ```sudo docker system prune -a``` for all unused images
