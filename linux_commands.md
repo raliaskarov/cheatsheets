@@ -480,6 +480,7 @@ or
 # apt package cache
 sudo apt-get clean
 sudo apt-get autoclean
+sudo apt-get autoremove --purge -y
 ```
 **Clean docker images**
 ```sudo docker system prune```
