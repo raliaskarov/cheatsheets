@@ -503,6 +503,11 @@ docker volume ls
 docker volume inspect <volume_name>
 ```
 
+View what docket think it uses
+```
+docker system df
+```
+
 See containers that use volume
 ```
 docker ps -a --filter volume=<volume_name>
