@@ -30,6 +30,11 @@ See running services
 systemctl list-units --type=service --state=running
 ```
 
+Create a systemd service
+```
+sudo nano /etc/systemd/system/jupyter-lab.service
+```
+
 # Process Management
 See running processes
 Overview
