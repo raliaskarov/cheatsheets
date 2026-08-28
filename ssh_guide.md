@@ -79,6 +79,12 @@ cp ~/.ssh/id_rsa.pub /media/usb/my_id_rsa.pub
 ```
 
 ## Verify
+
+Verify fingerprint for key typ ed25519
+```
+ssh-keygen -l -f /etc/ssh/ssh_host_ed25519_key.pub
+```
+
 Example:
 ```
 ssh-keygen -Y verify \
