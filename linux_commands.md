@@ -119,6 +119,12 @@ sudo apt --fix-broken install
 |` $ 7za e <PATH_TO_ARCHIVE>`|Extract files from archive (without using directory names)|
 |`bsdtar xvf myfile.zip` | Extract (x) verbose (v) myfile.zip (f) | 
 [7za help](https://www.mankier.com/1/7za)
+
+# Security
+View SHA256 file integrity hash
+```
+shasum -a 256  2026-06-18-raspios-trixie-arm64.img.xz
+```
 # Disk management
 
 See disks
