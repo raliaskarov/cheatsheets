@@ -98,6 +98,9 @@ sudo apt --fix-broken install
 |`$ rm -r <DIRECTORY>`|remove not empty directory with all contents **without prompting**|
 |`$ rm -i <FILENAME>` | Remove file with prompring y/n|
 |`$ rm \*.pdf`| Remove all .pdf files|
+| `cp -a /home/user/Videos/. /media/user/FOLDER/` | copy all contents of Videos to FOLDER|
+|rsync -avh --progress /home/yser/Videos /media/user/FOLDER/|same but proper sync|
+
 # Navigation
 |Command                              |Action                               |
 |-------------------------------------|-------------------------------------|
