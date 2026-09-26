@@ -170,6 +170,59 @@ Unmount
 ```
 sudo umount /mnt/external
 ```
+
+
+## Set up hard drive to mount by defaut to given folder
+
+Unmount
+```
+sudo umount /media/myuser/'Extreme SSD'
+
+```
+
+Create mount dir
+```
+mkdir /mnt/sandisk_ssd
+```
+
+Find disk UUID
+```
+sudo blkid /dev/sdb1
+```
+Example of output:
+/dev/sdb1: LABEL="Extreme SSD" **UUID="E8C7-A482"** BLOCK_SIZE="512" TYPE="exfat" PARTLABEL="Extreme SSD" PARTUUID="270f4148-aaea-4afe-bd2a-a5dcabcebb29"
+
+
+Edit config
+
+```
+sudo nano /etc/fstab
+```
+
+Add line
+```
+UUID=3E52A13F52A0FD31 /mnt/external_hdd ntfs defaults,noatime,nofail 0 2
+<emd.automount 0 0
+
+```
+uid=1000,gid=1000` makes it writable by your `myuser` user (check with `id myuser` if unsure of the UID). `nofail` stops boot from hanging if the disk isn't plugged in. `x-systemd.automount` mounts it on first access rather than blocking boot, and remounts cleanly if you unplug/replug.
+
+Apply
+```
+sudo systemctl daemon-reload
+```
+
+Mount
+```
+sudo mount /mnt/sandisk_ssd
+```
+
+Confirm
+```
+df -h
+touch /mnt/sandisk_ssd/testfile
+```
+
 # Mount iOS devices
 ```
 sudo pacman -S ifuse libimobiledevice gvfs-afc
